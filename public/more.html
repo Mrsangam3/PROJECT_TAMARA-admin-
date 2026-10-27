@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More & Profile Menu - TAAMARA CO-LIVE SPACES</title>
+        <!-- Google Fonts (Official TAAMARA Typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- TAAMARA Brand Design System & Themes -->
+    <link rel="stylesheet" href="/css/taamara-theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/taamara-theme.js"></script>
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .custom-scrollbar {
+            overflow-y: auto !important;
+            scrollbar-width: thin;
+            scrollbar-color: #475569 transparent;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            display: block !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-[#faf6f0] text-[#1a1016] min-h-screen">
+
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
+        <!-- Sidebar Header / Branding (Fixed) -->
+        <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-xl shadow-md shadow-[#e2b842]/20">
+                    T
+                </div>
+                <div>
+                    <h1 class="text-base font-serif font-bold tracking-tight text-[#faf6f0] leading-tight">TAAMARA CO-LIVE</h1>
+                    <p class="text-[10px] text-[#e2b842] font-bold uppercase tracking-wider">Nanakramguda, Hyd</p>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between bg-[#1f0a18] border border-[#3d1630] px-3 py-2 rounded-xl text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-[#ede4d5] font-medium text-[11px]">Biometric Gate Live</span>
+                </div>
+                <a href="/" target="_blank" class="text-[#e2b842] hover:text-[#f1d278] text-[11px] font-bold">Website ↗</a>
+            </div>
+        </div>
+
+        <!-- Scrollable Navigation Links -->
+        <div id="sidebarScrollArea" class="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+            <nav class="p-4 space-y-6 text-xs">
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Management</p>
+                    <div class="space-y-1">
+                        <!-- Dashboard Overview -->
+                        <a href="/admin/dashboard" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            <span>Dashboard Overview</span>
+                        </a>
+
+                        <!-- Residents Directory -->
+                        <a href="/admin/residents" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                <span>Residents Directory</span>
+                            </div>
+                            <span class="bg-[#2a0e21] text-[#ede4d5] text-[10px] px-2 py-0.5 rounded-md font-semibold border border-[#3d1630]">68</span>
+                        </a>
+
+                        <!-- Rooms & Sharing Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                    <span>Rooms & Sharing</span>
+                                </div>
+                                <span class="bg-emerald-950/80 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md font-bold border border-emerald-800/40">7 Beds Free</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
+                                </a>
+                                <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
+                                </a>
+                                <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
+                                </a>
+                                <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
+                                    <span>+ Add New Room</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Finance & Ledger Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/finance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Finance & Ledger</span>
+                                </div>
+                                <span class="bg-[#2a0e21] text-[#e2b842] text-[10px] px-2 py-0.5 rounded-md font-bold border border-[#3d1630]">₹6.85L</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Record Entry</span>
+                                </a>
+                                <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Expenses Ledger</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Operations</p>
+                    <div class="space-y-1">
+                        <a href="/admin/assign-bed" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>Assign Bed (Check-In)</span>
+                        </a>
+
+                        <a href="/admin/new-checkins" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                                <span>New Check-ins</span>
+                            </div>
+                            <span class="text-[10px] bg-[#2a0e21] text-[#f1d278] font-bold px-2 py-0.5 rounded border border-[#3d1630]">3 Pending</span>
+                        </a>
+
+                        <a href="/admin/pending-dues" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span>Pending Dues</span>
+                            </div>
+                            <span class="bg-red-950/80 text-red-300 text-[10px] px-2 py-0.5 rounded-md font-bold border border-red-800/40">₹42.5K</span>
+                        </a>
+
+                        <a href="/admin/paid-tenants" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                <span>Settled Receipts</span>
+                            </div>
+                            <span class="text-[10px] text-[#a0909c]">64 Paid</span>
+                        </a>
+
+                        <!-- Maintenance Requests -->
+                        <a href="/admin/maintenance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                <span>Maintenance Requests</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 font-bold px-2 py-0.5 rounded-full border border-red-500/30">5 Active</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="/admin/notifications" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                <span>Notifications</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500 text-white font-bold px-1.5 py-0.2 rounded-full">4</span>
+                        </a>
+
+                        <!-- More & Profile Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/more" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition bg-[#e2b842]/15 text-[#f1d278] border border-[#e2b842]/30 font-bold shadow-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span>More & Profile</span>
+                                </div>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Edit Profile</span>
+                                    
+                                </a>
+                                <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
+                                    <span>↳ Logout Confirmation</span>
+                                    
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Fixed Bottom Bar -->
+        <div class="p-4 border-t border-[#3d1630] bg-[#14070f]/95 flex-shrink-0">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-[#e2b842]/20 text-[#f1d278] flex items-center justify-center font-bold text-sm border border-[#e2b842]/30">AM</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-[#faf6f0] truncate">Alex Morgan</p>
+                    <p class="text-[10px] text-[#a0909c] truncate">Super Admin • Sunrise</p>
+                </div>
+                <a href="/admin/logout-confirmation" class="text-[#a0909c] hover:text-red-400 p-1.5 transition" title="Logout">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                </a>
+            </div>
+            <p class="text-[10px] text-[#6e5d68] text-center">TAAMARA HavenHostel v2.4.1</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="lg:pl-64 flex flex-col min-h-screen pb-24 lg:pb-12">
+        
+        <!-- DESKTOP TOP BAR -->
+        <header class="hidden lg:flex h-16 bg-white border-b border-slate-200 px-6 lg:px-8 items-center justify-between sticky top-0 z-30">
+            <div class="flex items-center gap-3">
+                <a href="/admin/dashboard" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </a>
+                <div>
+                    <h2 class="text-base font-bold text-slate-900 leading-tight">More & Profile Menu</h2>
+                    <p class="text-[11px] text-slate-500 font-medium">Property administration, team credentials & system settings</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="/admin/notifications" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 relative hover:bg-slate-200 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-red-600 rounded-full"></span>
+                </a>
+            </div>
+        </header>
+
+        <!-- MOBILE TOP BAR (Exact match to Mockup top bar) -->
+        <div class="lg:hidden bg-white border-b border-slate-200 px-4 py-2.5 sticky top-0 z-30 flex items-center justify-between">
+            <div>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-extrabold text-slate-900 font-serif">HavenHostel</span>
+                </div>
+                <p class="text-[10px] text-slate-500 font-medium -mt-0.5">More</p>
+            </div>
+            <a href="/admin/notifications" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 relative">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                <span class="absolute top-2 right-2 w-2 h-2 bg-red-600 rounded-full"></span>
+            </a>
+        </div>
+
+        <!-- MAIN MENU CONTAINER -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-xl lg:max-w-2xl w-full mx-auto space-y-5">
+
+            <!-- PROFILE HERO CARD (Matches Mockup) -->
+            <div class="bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm space-y-4">
+                <div class="flex items-center gap-4">
+                    <!-- Avatar circle with active status indicator -->
+                    <div class="relative flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full bg-[#e2b842]/15 flex items-center justify-center text-[#c59b27] text-xl font-bold">
+                            AM
+                        </div>
+                        <span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-700 ring-2 ring-white"></span>
+                    </div>
+
+                    <div class="flex-1 min-w-0">
+                        <h2 class="text-lg font-black text-slate-900 tracking-tight leading-tight">Alex Morgan</h2>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#c59b27] bg-[#fdfbf7] px-2 py-0.5 rounded-full border border-[#ede4d5]">
+                                <svg class="w-3 h-3 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                <span>Super Admin • Sunrise Branch</span>
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-400 font-medium mt-1 truncate">alex.morgan@havenhostel.com</p>
+                    </div>
+                </div>
+
+                <!-- View & Edit Profile Button (Assigned to View & Edit Profile Subscreen) -->
+                <a href="/admin/view-edit-profile" id="btnViewEditProfile" class="w-full bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#c59b27] text-xs font-bold py-2.5 px-4 rounded-2xl border border-[#ede4d5] flex items-center justify-between transition group shadow-2xs">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                        <span>View & Edit Profile</span>
+                    </div>
+                    <svg class="w-4 h-4 text-[#c59b27] group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+
+            <!-- TWO QUICK INFO TILES (PROPERTY & SHIFT - Matches Mockup) -->
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Tile 1: Property -->
+                <div class="bg-white rounded-3xl p-4 border border-slate-200/90 shadow-sm flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">PROPERTY</p>
+                        <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Sunrise Haven</h4>
+                    </div>
+                </div>
+
+                <!-- Tile 2: Shift -->
+                <div class="bg-white rounded-3xl p-4 border border-slate-200/90 shadow-sm flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">SHIFT</p>
+                        <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Day Handover</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 1: OPERATIONS & PEOPLE -->
+            <div class="space-y-2">
+                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2">OPERATIONS & PEOPLE</p>
+                <div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden divide-y divide-slate-100">
+                    
+                    <!-- Item 1: Staff Management -->
+                    <button type="button" onclick="showOptionModal('Staff Management', 'Active Duty: 3 Wardens, 2 Cleaners, 1 Tech Engineer assigned.')" class="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Staff Management</h4>
+                                <p class="text-xs text-slate-400">3 Wardens, 2 Cleaners, 1 Tech</p>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-slate-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+
+                    <!-- Item 2: Reports & Analytics -->
+                    <button type="button" onclick="showOptionModal('Reports & Analytics', 'Monthly Occupancy: 91%, Revenue: ₹6,85,000, 32 Expense vouchers.')" class="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Reports & Analytics</h4>
+                                <p class="text-xs text-slate-400">Occupancy, Revenue & Trends</p>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-slate-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+
+                    <!-- Item 3: Security & Gate Pass -->
+                    <button type="button" onclick="showOptionModal('Security & Gate Pass', 'Biometric Turnstile: Online. Night curfew logs: 1 breach reported at 11:42 PM.')" class="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Security & Gate Pass</h4>
+                                <p class="text-xs text-slate-400">Visitor logs & night curfew logs</p>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-slate-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- SECTION 2: COMMUNICATION & SYSTEM -->
+            <div class="space-y-2">
+                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2">COMMUNICATION & SYSTEM</p>
+                <div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden divide-y divide-slate-100">
+                    
+                    <!-- Item 1: Notifications (Links to /admin/notifications) -->
+                    <a href="/admin/notifications" class="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-slate-900">Notifications</h4>
+                                    <span class="text-[10px] font-extrabold text-red-600 bg-red-50 border border-red-200/60 px-2 py-0.5 rounded-full">4 Unread</span>
+                                </div>
+                                <p class="text-xs text-slate-400">Alerts, requests & notices</p>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-slate-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+
+                    <!-- Item 2: Hostel Settings & Pricing -->
+                    <button type="button" onclick="showOptionModal('Hostel Settings & Pricing', 'Pricing matrix: 3-Sharing ₹9,500/mo, 2-Sharing ₹12,500/mo, 1-Bed Penthouse ₹18,000/mo.')" class="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Hostel Settings & Pricing</h4>
+                                <p class="text-xs text-slate-400">Room rates, rules & curfew</p>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-slate-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- SECTION 3: ACCOUNT & SESSION -->
+            <div class="space-y-2">
+                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2">ACCOUNT & SESSION</p>
+                <div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden divide-y divide-slate-100">
+                    
+                    <!-- Item 1: Help & Support -->
+                    <button type="button" onclick="showOptionModal('Help & Support', 'HavenHostel 24/7 Desk: +91 7386647564 • Email: support@havenhostel.com')" class="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-2xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Help & Support</h4>
+                                <p class="text-xs text-slate-400">Knowledge base & 24/7 admin desk</p>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-slate-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+
+                    <!-- Item 2: Logout (Assigned to Logout Confirmation Subscreen) -->
+                    <a href="/admin/logout-confirmation" id="btnLogout" class="w-full p-4 flex items-center justify-between text-left hover:bg-red-50/40 transition group">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-2xl bg-red-100/70 text-red-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-red-600">Logout</h4>
+                                <p class="text-xs text-red-400">Shift handoff & session termination</p>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-red-400 group-hover:text-red-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- FOOTER INFO & SYSTEM STATUS (Matches Mockup) -->
+            <div class="pt-4 text-center space-y-2">
+                <p class="text-xs text-slate-400 font-medium">
+                    <span class="inline-block w-2 h-2 rounded-full bg-teal-400 mr-1.5"></span>
+                    HavenHostel Admin v2.4.1 (Build 108)
+                </p>
+                <div>
+                    <span class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1 rounded-full border border-slate-200">
+                        <span>System Status:</span>
+                        <span class="text-emerald-700">All Online</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    </span>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- MOBILE BOTTOM NAVIGATION BAR (Matches Mockup with More Active) -->
+        <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#faf6f0]/95 backdrop-blur-md border-t border-[#ede4d5] z-40 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-[#6e5d68] shadow-lg">
+        <a href="/admin/dashboard" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="/admin/tenants" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span>Tenants</span>
+        </a>
+        <a href="/admin/rooms/floor-1" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <span>Rooms</span>
+        </a>
+        <a href="/admin/finance" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Finance</span>
+        </a>
+        <a href="/admin/more" class="flex flex-col items-center gap-1 transition text-[#c59b27] font-bold">
+            <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <span>More</span>
+        </a>
+    </nav>
+
+    </div>
+
+    <!-- PROFILE EDIT MODAL -->
+    <div id="profileModal" class="fixed inset-0 z-50 bg-slate-950/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl transform scale-95 transition-transform duration-200">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                <h3 class="text-base font-bold text-slate-900">Admin Profile</h3>
+                <button type="button" onclick="closeProfileModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">✕</button>
+            </div>
+            
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Full Name</label>
+                    <input type="text" value="Alex Morgan" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none font-bold text-slate-900">
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Role & Designation</label>
+                    <input type="text" value="Super Admin • Sunrise Branch" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none text-slate-700" readonly>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Official Email</label>
+                    <input type="email" value="alex.morgan@havenhostel.com" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none font-medium text-slate-800">
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Phone Helpline</label>
+                    <input type="text" value="+91 7386647564" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none font-medium text-slate-800">
+                </div>
+            </div>
+
+            <div class="pt-2 flex gap-2">
+                <button type="button" onclick="closeProfileModal()" class="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs hover:bg-slate-50">Cancel</button>
+                <button type="button" onclick="saveProfile()" class="flex-1 py-2.5 rounded-xl bg-[#14070f] text-white font-bold text-xs hover:bg-slate-900">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPTION DETAIL MODAL -->
+    <div id="optionModal" class="fixed inset-0 z-50 bg-slate-950/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl transform scale-95 transition-transform duration-200">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                <h3 class="text-base font-bold text-slate-900" id="optionModalTitle">Option Detail</h3>
+                <button type="button" onclick="closeOptionModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">✕</button>
+            </div>
+            
+            <p class="text-xs text-slate-600 leading-relaxed" id="optionModalBody"></p>
+
+            <div class="pt-2">
+                <button type="button" onclick="closeOptionModal()" class="w-full py-2.5 rounded-xl bg-[#14070f] text-white font-bold text-xs hover:bg-slate-900">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastSuccess" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-[#14070f] text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 transition-all duration-300 translate-y-[-120%] opacity-0 pointer-events-none">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold" id="toastTitle">Profile Updated</h4>
+            <p class="text-[10px] text-slate-300" id="toastMsg">Changes saved successfully.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/js/sidebar-scroll.js"></script>
+    <script>
+        function openProfileModal() {
+            const modal = document.getElementById('profileModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeProfileModal() {
+            const modal = document.getElementById('profileModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function saveProfile() {
+            closeProfileModal();
+            showToast('Profile Saved', 'Alex Morgan credentials updated successfully.');
+        }
+
+        function showOptionModal(title, desc) {
+            document.getElementById('optionModalTitle').textContent = title;
+            document.getElementById('optionModalBody').textContent = desc;
+            const modal = document.getElementById('optionModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeOptionModal() {
+            const modal = document.getElementById('optionModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function showToast(title, msg) {
+            const toast = document.getElementById('toastSuccess');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMsg').textContent = msg;
+
+            toast.classList.remove('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

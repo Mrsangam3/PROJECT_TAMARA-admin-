@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - TAAMARA CO-LIVE SPACES</title>
+        <!-- Google Fonts (Official TAAMARA Typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- TAAMARA Brand Design System & Themes -->
+    <link rel="stylesheet" href="/css/taamara-theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/taamara-theme.js"></script>
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .custom-scrollbar {
+            overflow-y: auto !important;
+            scrollbar-width: thin;
+            scrollbar-color: #475569 transparent;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            display: block !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-[#faf6f0] text-[#1a1016] min-h-screen">
+
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
+        <!-- Sidebar Header / Branding (Fixed) -->
+        <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-xl shadow-md shadow-[#e2b842]/20">
+                    T
+                </div>
+                <div>
+                    <h1 class="text-base font-serif font-bold tracking-tight text-[#faf6f0] leading-tight">TAAMARA CO-LIVE</h1>
+                    <p class="text-[10px] text-[#e2b842] font-bold uppercase tracking-wider">Nanakramguda, Hyd</p>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between bg-[#1f0a18] border border-[#3d1630] px-3 py-2 rounded-xl text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-[#ede4d5] font-medium text-[11px]">Biometric Gate Live</span>
+                </div>
+                <a href="/" target="_blank" class="text-[#e2b842] hover:text-[#f1d278] text-[11px] font-bold">Website ↗</a>
+            </div>
+        </div>
+
+        <!-- Scrollable Navigation Links -->
+        <div id="sidebarScrollArea" class="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+            <nav class="p-4 space-y-6 text-xs">
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Management</p>
+                    <div class="space-y-1">
+                        <!-- Dashboard Overview -->
+                        <a href="/admin/dashboard" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            <span>Dashboard Overview</span>
+                        </a>
+
+                        <!-- Residents Directory -->
+                        <a href="/admin/residents" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                <span>Residents Directory</span>
+                            </div>
+                            <span class="bg-[#2a0e21] text-[#ede4d5] text-[10px] px-2 py-0.5 rounded-md font-semibold border border-[#3d1630]">68</span>
+                        </a>
+
+                        <!-- Rooms & Sharing Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                    <span>Rooms & Sharing</span>
+                                </div>
+                                <span class="bg-emerald-950/80 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md font-bold border border-emerald-800/40">7 Beds Free</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
+                                </a>
+                                <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
+                                </a>
+                                <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
+                                </a>
+                                <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
+                                    <span>+ Add New Room</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Finance & Ledger Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/finance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Finance & Ledger</span>
+                                </div>
+                                <span class="bg-[#2a0e21] text-[#e2b842] text-[10px] px-2 py-0.5 rounded-md font-bold border border-[#3d1630]">₹6.85L</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Record Entry</span>
+                                </a>
+                                <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Expenses Ledger</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Operations</p>
+                    <div class="space-y-1">
+                        <a href="/admin/assign-bed" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>Assign Bed (Check-In)</span>
+                        </a>
+
+                        <a href="/admin/new-checkins" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                                <span>New Check-ins</span>
+                            </div>
+                            <span class="text-[10px] bg-[#2a0e21] text-[#f1d278] font-bold px-2 py-0.5 rounded border border-[#3d1630]">3 Pending</span>
+                        </a>
+
+                        <a href="/admin/pending-dues" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span>Pending Dues</span>
+                            </div>
+                            <span class="bg-red-950/80 text-red-300 text-[10px] px-2 py-0.5 rounded-md font-bold border border-red-800/40">₹42.5K</span>
+                        </a>
+
+                        <a href="/admin/paid-tenants" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                <span>Settled Receipts</span>
+                            </div>
+                            <span class="text-[10px] text-[#a0909c]">64 Paid</span>
+                        </a>
+
+                        <!-- Maintenance Requests -->
+                        <a href="/admin/maintenance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                <span>Maintenance Requests</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 font-bold px-2 py-0.5 rounded-full border border-red-500/30">5 Active</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="/admin/notifications" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition bg-[#e2b842]/15 text-[#f1d278] border border-[#e2b842]/30 font-bold shadow-xs">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                <span>Notifications</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500 text-white font-bold px-1.5 py-0.2 rounded-full">4</span>
+                        </a>
+
+                        <!-- More & Profile Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/more" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span>More & Profile</span>
+                                </div>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Edit Profile</span>
+                                    
+                                </a>
+                                <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
+                                    <span>↳ Logout Confirmation</span>
+                                    
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Fixed Bottom Bar -->
+        <div class="p-4 border-t border-[#3d1630] bg-[#14070f]/95 flex-shrink-0">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-[#e2b842]/20 text-[#f1d278] flex items-center justify-center font-bold text-sm border border-[#e2b842]/30">AM</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-[#faf6f0] truncate">Alex Morgan</p>
+                    <p class="text-[10px] text-[#a0909c] truncate">Super Admin • Sunrise</p>
+                </div>
+                <a href="/admin/logout-confirmation" class="text-[#a0909c] hover:text-red-400 p-1.5 transition" title="Logout">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                </a>
+            </div>
+            <p class="text-[10px] text-[#6e5d68] text-center">TAAMARA HavenHostel v2.4.1</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="lg:pl-64 flex flex-col min-h-screen pb-24 lg:pb-12">
+        
+        <!-- DESKTOP TOP BAR -->
+        <header class="hidden lg:flex h-16 bg-[#faf6f0]/95 backdrop-blur-md border-b border-[#ede4d5] px-6 lg:px-8 items-center justify-between sticky top-0 z-30">
+            <div class="flex items-center gap-3">
+                <a href="/admin/dashboard" class="w-9 h-9 rounded-xl bg-white border border-[#ede4d5] hover:bg-[#ede4d5]/50 text-[#1a1016] flex items-center justify-center transition shadow-2xs">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </a>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h2 class="text-base font-bold text-[#1a1016] font-serif leading-tight">Notifications & Live Stream</h2>
+                        <a href="/admin/unread-notifications" onclick="transitionToUnread(event)" id="desktopNewBadge" class="text-[10px] bg-[#e2b842] text-[#14070f] font-bold px-2 py-0.5 rounded-full hover:bg-[#f1d278] transition cursor-pointer flex items-center gap-1 shadow-2xs" title="View Unread Notifications">
+                            <span>4 New</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping"></span>
+                        </a>
+                        <span class="text-[10px] bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded-full border border-emerald-200/60 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live Sync
+                        </span>
+                    </div>
+                    <p class="text-[11px] text-[#6e5d68] font-medium">Real-time alerts, curfew breaches, and rent dues for Taamara Co-Live Spaces</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+                <button onclick="markAllAsRead()" class="text-xs font-bold text-[#c59b27] bg-[#fdfbf7] hover:bg-[#e2b842]/15 px-4 py-2 rounded-xl border border-[#ede4d5] transition flex items-center gap-1.5 shadow-2xs">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    <span>Mark all as read</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- MOBILE TOP BAR (Matches Mockup) -->
+        <div class="lg:hidden bg-[#faf6f0]/95 border-b border-[#ede4d5] px-4 py-2.5 sticky top-0 z-30 flex items-center justify-between">
+            <div>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-extrabold text-[#1a1016] font-serif">HavenHostel</span>
+                </div>
+                <p class="text-[10px] text-[#c59b27] font-bold uppercase tracking-wider font-serif -mt-0.5">TAAMARA CO-LIVE</p>
+            </div>
+            <a href="/admin/unread-notifications" onclick="transitionToUnread(event)" class="w-9 h-9 rounded-full bg-white border border-[#ede4d5] flex items-center justify-center text-[#1a1016] relative hover:bg-[#ede4d5]/50 transition shadow-2xs" title="Unread Notifications Subscreen">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                <span id="mobileTopBellBadge" class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-600 rounded-full animate-ping"></span>
+            </a>
+        </div>
+
+        <!-- MAIN NOTIFICATIONS CONTAINER -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-2xl lg:max-w-3xl w-full mx-auto space-y-4">
+
+            <!-- SUB-HEADER BAR (Back to Home + Mark all as read button - Matches Mockup) -->
+            <div class="flex items-center justify-between gap-3">
+                <a href="/admin/dashboard" class="flex items-center gap-2 text-xs font-bold text-[#6e5d68] hover:text-[#1a1016] py-1 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    <span>Home</span>
+                </a>
+
+                <button type="button" onclick="markAllAsRead()" class="text-xs font-bold text-[#c59b27] bg-[#fdfbf7] hover:bg-[#e2b842]/15 px-3.5 py-1.5 rounded-full border border-[#ede4d5] transition flex items-center gap-1.5 shadow-2xs">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    <span>Mark all as read</span>
+                </button>
+            </div>
+
+            <!-- TITLE ROW WITH BADGES (Matches Mockup) -->
+            <div class="flex items-center gap-2.5">
+                <h1 class="text-2xl font-black text-[#1a1016] font-serif tracking-tight">Notifications</h1>
+                <a href="/admin/unread-notifications" onclick="transitionToUnread(event)" id="heroNewBadge" class="text-xs font-black text-[#14070f] bg-[#e2b842] hover:bg-[#f1d278] px-2.5 py-0.5 rounded-full shadow-2xs cursor-pointer transition flex items-center gap-1.5 group" title="Click to view 4 Unread Alerts">
+                    <span>4 New</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping"></span>
+                </a>
+                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/60 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Live Sync</span>
+                </span>
+            </div>
+
+            <!-- FILTER PILLS (Matches Mockup) -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+                <button type="button" onclick="filterNotifs('All')" id="pillAll" class="notif-pill bg-[#14070f] text-[#faf6f0] text-xs font-bold px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap transition border border-[#3d1630]">
+                    All (12)
+                </button>
+                <a href="/admin/unread-notifications" onclick="transitionToUnread(event)" id="pillUnread" class="notif-pill bg-white text-slate-700 hover:bg-[#14070f] hover:text-[#faf6f0] border border-[#ede4d5] hover:border-[#14070f] text-xs font-bold px-3.5 py-1.5 rounded-full whitespace-nowrap transition flex items-center gap-1.5 cursor-pointer shadow-2xs group" title="Open Unread Notifications subscreen">
+                    <span>Unread</span>
+                    <span class="w-2 h-2 rounded-full bg-[#14070f] animate-pulse"></span>
+                    <span id="pillUnreadCount" class="font-mono">4</span>
+                </a>
+                <button type="button" onclick="filterNotifs('Payments')" id="pillPayments" class="notif-pill bg-white text-slate-600 hover:bg-slate-100 border border-[#ede4d5] text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Payments (3)
+                </button>
+                <button type="button" onclick="filterNotifs('Maintenance')" id="pillMaintenance" class="notif-pill bg-white text-slate-600 hover:bg-slate-100 border border-[#ede4d5] text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Maintenance (3)
+                </button>
+                <button type="button" onclick="filterNotifs('Security')" id="pillSecurity" class="notif-pill bg-white text-slate-600 hover:bg-slate-100 border border-[#ede4d5] text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Security (2)
+                </button>
+            </div>
+
+            <!-- NOTIFICATIONS LIST (Matches Mockup) -->
+            <div id="notifsContainer" class="space-y-3.5 pt-1">
+                
+                <!-- Card 1 • Payment Overdue Alert (Unread) -->
+                <div class="notif-card bg-white rounded-3xl p-5 border border-[#ede4d5] shadow-xs hover:shadow-md transition space-y-3 relative" data-category="Payments" data-read="false">
+                    <div class="flex items-start gap-3.5">
+                        <div class="relative flex-shrink-0">
+                            <div class="w-11 h-11 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-black text-lg">
+                                !
+                            </div>
+                            <button type="button" onclick="transitionToUnread(event)" class="unread-dot absolute -top-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#14070f] ring-2 ring-white cursor-pointer hover:scale-125 transition-transform" title="Unread alert - click to view unread subscreen"></button>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[11px] font-bold text-red-600 uppercase tracking-wide flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-600"></span> FINANCE • OVERDUE
+                                </span>
+                                <span class="text-xs text-slate-400 font-medium">10m ago</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-slate-900 mt-0.5">Payment Overdue Alert</h3>
+                            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+                                <strong class="text-slate-900 font-bold">Marcus Vance</strong> (Room 204) has not cleared October rent (<strong class="text-slate-900 font-bold">$450</strong>). Payment is 3 days overdue.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="pt-1 flex flex-wrap items-center gap-2 pl-14">
+                        <a href="https://wa.me/917386647564?text=Hi%20Marcus,%20friendly%20reminder%20regarding%20your%20pending%20October%20rent%20of%20$450%20at%20Taamara%20Co-Live." target="_blank" class="bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#c59b27] text-xs font-bold py-2 px-3.5 rounded-xl border border-[#ede4d5] flex items-center gap-1.5 transition">
+                            <svg class="w-3.5 h-3.5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                            <span>WhatsApp Reminder</span>
+                        </a>
+                        <a href="tel:+917386647564" class="bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-slate-700 text-xs font-bold py-2 px-3.5 rounded-xl border border-[#ede4d5] flex items-center gap-1.5 transition">
+                            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>Call Tenant</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 • New Maintenance Request (Unread) -->
+                <div class="notif-card bg-white rounded-3xl p-5 border border-[#ede4d5] shadow-xs hover:shadow-md transition space-y-3 relative" data-category="Maintenance" data-read="false">
+                    <div class="flex items-start gap-3.5">
+                        <div class="relative flex-shrink-0">
+                            <div class="w-11 h-11 rounded-full bg-[#e2b842]/15 text-[#c59b27] flex items-center justify-center font-black">
+                                <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                            </div>
+                            <button type="button" onclick="transitionToUnread(event)" class="unread-dot absolute -top-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#14070f] ring-2 ring-white cursor-pointer hover:scale-125 transition-transform" title="Unread alert - click to view unread subscreen"></button>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[11px] font-bold text-[#c59b27] uppercase tracking-wide flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#14070f]"></span> URGENT • ROOM 102
+                                </span>
+                                <span class="text-xs text-slate-400 font-medium">45m ago</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-slate-900 mt-0.5">New Maintenance Request</h3>
+                            
+                            <!-- Reported Box -->
+                            <div class="mt-2 p-3 bg-[#fdfbf7] rounded-2xl border border-[#ede4d5] text-xs text-slate-700 font-medium">
+                                <strong class="text-slate-900 font-bold">Elena Rostova</strong> reported: "AC leaking water in Bedroom B."
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <div class="pt-1 pl-14">
+                        <button type="button" onclick="assignMaintenanceStaff('Room 102')" class="w-full bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm transition">
+                            <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            <span>Assign Maintenance Staff</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 • Gate Curfew Breach (Unread) -->
+                <div class="notif-card bg-white rounded-3xl p-5 border border-[#ede4d5] shadow-xs hover:shadow-md transition space-y-3 relative" data-category="Security" data-read="false">
+                    <div class="flex items-start gap-3.5">
+                        <div class="relative flex-shrink-0">
+                            <div class="w-11 h-11 rounded-full bg-[#e2b842]/15 text-[#1a1016] flex items-center justify-center font-black">
+                                <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <button type="button" onclick="transitionToUnread(event)" class="unread-dot absolute -top-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#14070f] ring-2 ring-white cursor-pointer hover:scale-125 transition-transform" title="Unread alert - click to view unread subscreen"></button>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[11px] font-bold text-slate-600 uppercase tracking-wide flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span> SECURITY • ENTRY LOG
+                                </span>
+                                <span class="text-xs text-slate-400 font-medium">3h ago</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-slate-900 mt-0.5">Gate Curfew Breach</h3>
+                            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+                                Biometric gate recorded <strong class="text-slate-900 font-bold">Late Entry</strong> for Bed 108-A (<strong class="text-slate-900 font-bold">Liam O'Connor</strong>) at 11:42 PM.
+                            </p>
+                            
+                            <div class="pt-2">
+                                <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-lg">
+                                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    <span>Turnstile Main A</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 • Rent Received (Read) -->
+                <div class="notif-card bg-white rounded-3xl p-5 border border-[#ede4d5] shadow-xs hover:shadow-md transition space-y-3 relative" data-category="Payments" data-read="true">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-black flex-shrink-0">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[11px] font-bold text-emerald-700 uppercase tracking-wide">
+                                    FINANCE • CLEARED
+                                </span>
+                                <span class="text-xs text-slate-400 font-medium">Yesterday, 4:15 PM</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-slate-900 mt-0.5">Rent Received</h3>
+                            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+                                <strong class="text-slate-900 font-bold">David Chen</strong> (Room 305) paid <strong class="text-slate-900 font-bold">$550</strong> for November rent via Card.
+                            </p>
+                            
+                            <div class="pt-2">
+                                <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-lg">
+                                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                                    <span>Txn #8942-A</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 • Inspection Completed (Read) -->
+                <div class="notif-card bg-white rounded-3xl p-5 border border-[#ede4d5] shadow-xs hover:shadow-md transition space-y-3 relative" data-category="Maintenance" data-read="true">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-black flex-shrink-0">
+                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wide">
+                                    STAFF • AUDIT
+                                </span>
+                                <span class="text-xs text-slate-400 font-medium">2 days ago</span>
+                            </div>
+                            <h3 class="text-base font-extrabold text-slate-900 mt-0.5">Inspection Completed</h3>
+                            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+                                <strong class="text-slate-900 font-bold">Warden John</strong> marked Floor 2 weekly hygiene audit as <strong class="text-emerald-700 font-bold">Approved</strong>.
+                            </p>
+                            
+                            <div class="pt-2">
+                                <span class="inline-flex items-center gap-1.5 bg-[#fdfbf7] border border-[#ede4d5] text-[#c59b27] text-[11px] font-bold px-2.5 py-1 rounded-lg">
+                                    14/14 Checks Passed
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- MOBILE BOTTOM NAVIGATION BAR -->
+        <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#faf6f0]/95 backdrop-blur-md border-t border-[#ede4d5] z-40 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-[#6e5d68] shadow-lg">
+        <a href="/admin/dashboard" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="/admin/tenants" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span>Tenants</span>
+        </a>
+        <a href="/admin/rooms/floor-1" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <span>Rooms</span>
+        </a>
+        <a href="/admin/finance" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Finance</span>
+        </a>
+        <a href="/admin/more" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <span>More</span>
+        </a>
+    </nav>
+
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastSuccess" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-[#14070f] text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 transition-all duration-300 translate-y-[-120%] opacity-0 pointer-events-none">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold" id="toastTitle">Notifications Updated</h4>
+            <p class="text-[10px] text-slate-300" id="toastMsg">All notices marked as read.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/js/sidebar-scroll.js"></script>
+    <script>
+        let currentFilter = 'All';
+
+        function transitionToUnread(e) {
+            if (e) e.preventDefault();
+            const main = document.querySelector('main');
+            if (main) {
+                main.classList.add('transition-all', 'duration-200', 'ease-out', 'opacity-0', '-translate-x-6');
+            }
+            setTimeout(() => {
+                window.location.href = '/admin/unread-notifications';
+            }, 180);
+        }
+
+        function filterNotifs(cat) {
+            if (cat === 'Unread') {
+                transitionToUnread();
+                return;
+            }
+            currentFilter = cat;
+
+            document.querySelectorAll('.notif-pill').forEach(p => {
+                p.className = 'notif-pill bg-white text-slate-600 hover:bg-slate-100 border border-[#ede4d5] text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition';
+            });
+
+            const pillMap = {
+                'All': 'pillAll',
+                'Unread': 'pillUnread',
+                'Payments': 'pillPayments',
+                'Maintenance': 'pillMaintenance',
+                'Security': 'pillSecurity'
+            };
+
+            const activePill = document.getElementById(pillMap[cat]);
+            if (activePill) {
+                activePill.className = 'notif-pill bg-[#14070f] text-[#faf6f0] text-xs font-bold px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap transition border border-[#3d1630]';
+            }
+
+            const cards = document.querySelectorAll('.notif-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                const isRead = card.getAttribute('data-read') === 'true';
+
+                if (cat === 'All') {
+                    card.style.display = 'block';
+                } else if (cat === 'Unread') {
+                    card.style.display = !isRead ? 'block' : 'none';
+                } else if (cardCat === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function markAllAsRead() {
+            document.querySelectorAll('.unread-dot').forEach(dot => dot.remove());
+            document.querySelectorAll('.notif-card').forEach(card => card.setAttribute('data-read', 'true'));
+
+            const heroBadge = document.getElementById('heroNewBadge');
+            if (heroBadge) heroBadge.textContent = '0 New';
+
+            const deskBadge = document.getElementById('desktopNewBadge');
+            if (deskBadge) deskBadge.textContent = '0 New';
+
+            const unreadCount = document.getElementById('pillUnreadCount');
+            if (unreadCount) unreadCount.textContent = '(0)';
+
+            const topBell = document.getElementById('mobileTopBellBadge');
+            if (topBell) topBell.remove();
+
+            const sideBadge = document.getElementById('sideBadge');
+            if (sideBadge) sideBadge.textContent = '0';
+
+            showToast('All Notices Cleared', 'All 4 unread alerts marked as read.');
+        }
+
+        function assignMaintenanceStaff(room) {
+            showToast('Staff Dispatched', `Maintenance technician Ramesh Kumar assigned to ${room}.`);
+        }
+
+        function showToast(title, msg) {
+            const toast = document.getElementById('toastSuccess');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMsg').textContent = msg;
+
+            toast.classList.remove('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

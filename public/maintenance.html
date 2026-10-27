@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Requests - TAAMARA CO-LIVE SPACES</title>
+    <!-- Google Fonts (Official TAAMARA Typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- TAAMARA Brand Design System & Themes -->
+    <link rel="stylesheet" href="/css/taamara-theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/taamara-theme.js"></script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #faf6f0; }
+        .custom-scrollbar {
+            overflow-y: auto !important;
+            scrollbar-width: thin;
+            scrollbar-color: #475569 transparent;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            display: block !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(20, 7, 15, 0.6);
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3d1630;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #e2b842;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fade-out-collapse {
+            transition: all 0.25s ease-out;
+            opacity: 0;
+            transform: scale(0.96) translateY(-8px);
+            max-height: 0;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden;
+            border: none !important;
+        }
+    </style>
+</head>
+<body class="bg-[#faf6f0] text-[#1a1016] min-h-screen">
+
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
+        <!-- Sidebar Header / Branding (Fixed) -->
+        <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-xl shadow-md shadow-[#e2b842]/20">
+                    T
+                </div>
+                <div>
+                    <h1 class="text-base font-serif font-bold tracking-tight text-[#faf6f0] leading-tight">TAAMARA CO-LIVE</h1>
+                    <p class="text-[10px] text-[#e2b842] font-bold uppercase tracking-wider">Nanakramguda, Hyd</p>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between bg-[#1f0a18] border border-[#3d1630] px-3 py-2 rounded-xl text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-[#ede4d5] font-medium text-[11px]">Biometric Gate Live</span>
+                </div>
+                <a href="/" target="_blank" class="text-[#e2b842] hover:text-[#f1d278] text-[11px] font-bold">Website ↗</a>
+            </div>
+        </div>
+
+        <!-- Scrollable Navigation Links -->
+        <div id="sidebarScrollArea" class="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+            <nav class="p-4 space-y-6 text-xs">
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Management</p>
+                    <div class="space-y-1">
+                        <!-- Dashboard Overview -->
+                        <a href="/admin/dashboard" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            <span>Dashboard Overview</span>
+                        </a>
+
+                        <!-- Residents Directory -->
+                        <a href="/admin/residents" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                <span>Residents Directory</span>
+                            </div>
+                            <span class="bg-[#2a0e21] text-[#ede4d5] text-[10px] px-2 py-0.5 rounded-md font-semibold border border-[#3d1630]">68</span>
+                        </a>
+
+                        <!-- Rooms & Sharing Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                    <span>Rooms & Sharing</span>
+                                </div>
+                                <span class="bg-emerald-950/80 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md font-bold border border-emerald-800/40">7 Beds Free</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
+                                </a>
+                                <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
+                                </a>
+                                <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
+                                </a>
+                                <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
+                                    <span>+ Add New Room</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Finance & Ledger Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/finance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Finance & Ledger</span>
+                                </div>
+                                <span class="bg-[#2a0e21] text-[#e2b842] text-[10px] px-2 py-0.5 rounded-md font-bold border border-[#3d1630]">₹6.85L</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Record Entry</span>
+                                </a>
+                                <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Expenses Ledger</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Operations</p>
+                    <div class="space-y-1">
+                        <a href="/admin/assign-bed" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>Assign Bed (Check-In)</span>
+                        </a>
+
+                        <a href="/admin/new-checkins" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                                <span>New Check-ins</span>
+                            </div>
+                            <span class="text-[10px] bg-[#2a0e21] text-[#f1d278] font-bold px-2 py-0.5 rounded border border-[#3d1630]">3 Pending</span>
+                        </a>
+
+                        <a href="/admin/pending-dues" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span>Pending Dues</span>
+                            </div>
+                            <span class="bg-red-950/80 text-red-300 text-[10px] px-2 py-0.5 rounded-md font-bold border border-red-800/40">₹42.5K</span>
+                        </a>
+
+                        <a href="/admin/paid-tenants" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                <span>Settled Receipts</span>
+                            </div>
+                            <span class="text-[10px] text-[#a0909c]">64 Paid</span>
+                        </a>
+
+                        <!-- Maintenance Requests -->
+                        <a href="/admin/maintenance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition bg-[#e2b842]/15 text-[#f1d278] border border-[#e2b842]/30 font-bold shadow-xs">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                <span>Maintenance Requests</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500 text-white font-black px-2 py-0.5 rounded-full border border-red-500/30">5 Active</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="/admin/notifications" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                <span>Notifications</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500 text-white font-bold px-1.5 py-0.2 rounded-full">4</span>
+                        </a>
+
+                        <!-- More & Profile Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/more" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span>More & Profile</span>
+                                </div>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Edit Profile</span>
+                                    
+                                </a>
+                                <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
+                                    <span>↳ Logout Confirmation</span>
+                                    
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Fixed Bottom Bar -->
+        <div class="p-4 border-t border-[#3d1630] bg-[#14070f]/95 flex-shrink-0">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-[#e2b842]/20 text-[#f1d278] flex items-center justify-center font-bold text-sm border border-[#e2b842]/30">AM</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-[#faf6f0] truncate">Alex Morgan</p>
+                    <p class="text-[10px] text-[#a0909c] truncate">Super Admin • Sunrise</p>
+                </div>
+                <a href="/admin/logout-confirmation" class="text-[#a0909c] hover:text-red-400 p-1.5 transition" title="Logout">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                </a>
+            </div>
+            <p class="text-[10px] text-[#6e5d68] text-center">TAAMARA HavenHostel v2.4.1</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="lg:pl-64 flex flex-col min-h-screen pb-24 lg:pb-12">
+        
+        <!-- TOP APP BAR (Header matching mockup) -->
+        <header class="sticky top-0 z-30 bg-[#faf6f0]/95 backdrop-blur-md border-b border-[#ede4d5] px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="/admin/dashboard" class="w-9 h-9 rounded-full bg-white border border-[#ede4d5] text-[#1a1016] hover:bg-[#ede4d5]/50 flex items-center justify-center transition shadow-2xs" title="Back to Dashboard">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </a>
+                <div>
+                    <h1 class="text-base sm:text-lg font-black text-[#1a1016] tracking-tight leading-tight font-serif">Maintenance Requests</h1>
+                    <p class="text-[10px] font-bold text-[#c59b27] uppercase tracking-wider font-serif">HavenHostel • TAAMARA</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <a href="/admin/unread-notifications" class="relative p-2 rounded-xl text-[#1a1016] hover:bg-white transition" title="4 Unread Alerts">
+                    <svg class="w-5 h-5 text-[#1a1016]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+                </a>
+            </div>
+        </header>
+
+        <!-- MAIN CONTAINER -->
+        <main class="flex-1 max-w-md sm:max-w-xl lg:max-w-2xl w-full mx-auto p-4 sm:p-6 space-y-4">
+            
+            <!-- SECTION TITLE ROW (Hostel Maintenance & Work Orders) -->
+            <div class="flex items-start justify-between gap-3 pt-1">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-black text-[#1a1016] tracking-tight font-serif leading-tight">
+                        Hostel Maintenance & Work Orders
+                    </h2>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <p class="text-xs font-bold text-[#c59b27]">5 Active • 2 Urgent Requires Action</p>
+                    </div>
+                </div>
+
+                <!-- Tools Icon Button -->
+                <button type="button" onclick="openNewIssueModal()" class="w-10 h-10 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] text-[#c59b27] flex items-center justify-center hover:bg-[#e2b842]/15 transition shadow-2xs flex-shrink-0" title="Log Work Order / Tool Settings">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </button>
+            </div>
+
+            <!-- 3 METRIC STATS CARDS (Urgent 2, Speed 3.4h, Crew 3) -->
+            <div class="grid grid-cols-3 gap-2.5 sm:gap-3.5">
+                <!-- Card 1: Urgent -->
+                <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-[#ede4d5] shadow-2xs flex flex-col justify-between">
+                    <div class="flex items-center justify-between text-[11px] font-black text-red-600 uppercase tracking-wider">
+                        <span>URGENT</span>
+                        <svg class="w-3.5 h-3.5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    </div>
+                    <div class="mt-2">
+                        <span id="statUrgent" class="text-2xl sm:text-3xl font-black text-[#1a1016] leading-none font-mono">2</span>
+                        <p class="text-[11px] font-semibold text-[#6e5d68] mt-1">High Priority</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Speed -->
+                <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-[#ede4d5] shadow-2xs flex flex-col justify-between">
+                    <div class="flex items-center justify-between text-[11px] font-black text-[#c59b27] uppercase tracking-wider">
+                        <span>SPEED</span>
+                        <svg class="w-3.5 h-3.5 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div class="mt-2">
+                        <div class="flex items-baseline">
+                            <span class="text-2xl sm:text-3xl font-black text-[#1a1016] leading-none font-mono">3.4</span>
+                            <span class="text-sm font-bold text-[#6e5d68] ml-0.5">h</span>
+                        </div>
+                        <p class="text-[11px] font-semibold text-[#6e5d68] mt-1">Avg. Resolve</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Crew -->
+                <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-[#ede4d5] shadow-2xs flex flex-col justify-between">
+                    <div class="flex items-center justify-between text-[11px] font-black text-emerald-600 uppercase tracking-wider">
+                        <span>CREW</span>
+                        <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <div class="mt-2">
+                        <span class="text-2xl sm:text-3xl font-black text-[#1a1016] leading-none font-mono">3</span>
+                        <p class="text-[11px] font-semibold text-[#6e5d68] mt-1">On Duty</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FILTER PILLS ROW (Matches Mockup with Urgent 2 Active) -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+                <button type="button" onclick="filterCategory('All')" id="pillAll" class="filter-pill bg-white hover:bg-slate-100 text-[#1a1016] border border-[#ede4d5] text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition flex items-center gap-1.5 shadow-2xs">
+                    <span>All</span>
+                    <span class="font-mono text-[11px] text-[#6e5d68]">7</span>
+                </button>
+                <button type="button" onclick="filterCategory('Urgent')" id="pillUrgent" class="filter-pill bg-[#14070f] text-[#faf6f0] text-xs font-extrabold px-4 py-2 rounded-full whitespace-nowrap shadow-sm flex items-center gap-1.5 border border-[#3d1630]">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#e2b842]"></span>
+                    <span>Urgent</span>
+                    <span id="pillUrgentCount" class="bg-[#1f0a18] text-[#e2b842] text-[10px] px-1.5 py-0.2 rounded-full font-bold">2</span>
+                </button>
+                <button type="button" onclick="filterCategory('InProgress')" id="pillInProgress" class="filter-pill bg-white hover:bg-slate-100 text-[#1a1016] border border-[#ede4d5] text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition flex items-center gap-1.5 shadow-2xs">
+                    <span>In Progress</span>
+                    <span class="font-mono text-[11px] text-[#6e5d68]">3</span>
+                </button>
+                <button type="button" onclick="filterCategory('Resolved')" id="pillResolved" class="filter-pill bg-white hover:bg-slate-100 text-[#1a1016] border border-[#ede4d5] text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition flex items-center gap-1.5 shadow-2xs">
+                    <span>Resolved</span>
+                </button>
+            </div>
+
+            <!-- CARDS CONTAINER -->
+            <div id="maintenanceCardsList" class="space-y-3.5 pt-1">
+                
+                <!-- CARD 1: ROOM 102 • AC LEAK (Urgent, Unassigned) -->
+                <div id="card-102" class="maintenance-card bg-white rounded-3xl p-5 border border-[#ede4d5] border-l-4 border-l-red-500 shadow-xs space-y-3 relative transition-all" data-status="Urgent">
+                    <!-- Top row: Icon + Location + High Priority tag + Unassigned badge -->
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-red-100/80 text-red-600 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-base font-black text-[#1a1016] leading-snug">Room 102</h3>
+                                    <span class="text-xs text-[#6e5d68] font-bold">• Bunk A</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 mt-0.5">
+                                    <span class="text-[10px] font-black text-red-600 tracking-wider">✱ HIGH PRIORITY</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Badge -->
+                        <span class="bg-red-50 text-red-700 border border-red-200/80 text-[10px] font-extrabold px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                            <span>Unassigned</span>
+                        </span>
+                    </div>
+
+                    <!-- Issue Title & Description -->
+                    <div>
+                        <h4 class="text-sm font-extrabold text-[#1a1016]">AC Leaking Water Continuously</h4>
+                        <p class="text-xs sm:text-[13px] text-[#4a3e47] leading-relaxed mt-1">
+                            Water dripping rapidly onto the lower study desk and electrical socket board.
+                        </p>
+                    </div>
+
+                    <!-- Resident Box (Elena Rostova) -->
+                    <div class="p-3.5 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] space-y-1">
+                        <div class="flex items-center justify-between text-xs">
+                            <strong class="text-[#1a1016] font-bold">Elena Rostova</strong>
+                            <span class="text-[11px] text-[#6e5d68] font-mono font-medium">45m ago</span>
+                        </div>
+                        <p class="italic text-xs text-[#4a3e47]">“Turned it off for safety, please rush!”</p>
+                    </div>
+
+                    <!-- Action Button: Assign Staff -->
+                    <div class="pt-1">
+                        <button type="button" onclick="openAssignModal('Room 102 (Bunk A)', 'AC Leaking Water Continuously', 'HVAC')" class="w-full bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] text-xs font-bold py-3 px-4 rounded-2xl flex items-center justify-center gap-2 shadow-sm transition">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                            <span>Assign Maintenance Staff</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2: ROOM 104 • FLUSH VALVE LEAK (Urgent, In Progress) -->
+                <div id="card-104" class="maintenance-card bg-white rounded-3xl p-5 border border-[#ede4d5] border-l-4 border-l-[#c59b27] shadow-xs space-y-3 relative transition-all" data-status="Urgent InProgress">
+                    <!-- Top row: Icon + Location + Urgent task tag + In Progress badge -->
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-[#e2b842]/15 text-[#c59b27] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-base font-black text-[#1a1016] leading-snug">Room 104</h3>
+                                    <span class="text-xs text-[#6e5d68] font-bold">• Ensuite Bath</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 mt-0.5">
+                                    <span class="text-[10px] font-black text-[#c59b27] tracking-wider">URGENT TASK</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Badge -->
+                        <span class="bg-[#fdfbf7] text-[#c59b27] border border-[#ede4d5] text-[10px] font-extrabold px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <svg class="w-3 h-3 text-[#c59b27] animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            <span>In Progress</span>
+                        </span>
+                    </div>
+
+                    <!-- Issue Title & Description -->
+                    <div>
+                        <h4 class="text-sm font-extrabold text-[#1a1016]">Flush Valve Leak & Low Pressure</h4>
+                        <p class="text-xs sm:text-[13px] text-[#4a3e47] leading-relaxed mt-1">
+                            Direct brass valve replacement required. Water shut off locally.
+                        </p>
+                    </div>
+
+                    <!-- Staff Assigned Box (John Doe) -->
+                    <div class="p-3.5 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] flex items-center justify-between">
+                        <div>
+                            <strong class="text-xs font-bold text-[#1a1016]">John Doe (Lead Plumber)</strong>
+                            <p class="text-[11px] text-[#6e5d68]">Reported by Alex D.</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-[#1a1016] font-mono">ETA 5:00 PM</span>
+                            <p class="text-[10px] font-bold text-[#c59b27]">En route</p>
+                        </div>
+                    </div>
+
+                    <!-- Actions (Call John + Mark Done) -->
+                    <div class="grid grid-cols-2 gap-2.5 pt-1">
+                        <button type="button" onclick="callTechnician('John Doe', '+91 7386647564')" class="bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#1a1016] text-xs font-bold py-2.5 px-3 rounded-2xl border border-[#ede4d5] flex items-center justify-center gap-1.5 transition">
+                            <svg class="w-4 h-4 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>Call John</span>
+                        </button>
+                        <button type="button" onclick="markCardResolved('card-104', 'Room 104 Flush Valve Replacement')" class="bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] text-xs font-bold py-2.5 px-3 rounded-2xl flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            <span>Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3: FLOOR 2 CORRIDORS • MESH AP OFFLINE (In Progress, Medium Priority) -->
+                <div id="card-ap" class="maintenance-card bg-white rounded-3xl p-5 border border-[#ede4d5] shadow-xs space-y-3 relative transition-all" data-status="InProgress">
+                    <!-- Top row: Icon + Location + 3 Tenants badge + Tag -->
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-[#e2b842]/15 text-[#c59b27] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-base font-black text-[#1a1016] leading-snug">Floor 2 Corridors</h3>
+                                </div>
+                                <p class="text-[11px] text-[#6e5d68] font-medium mt-0.5">Medium Priority • <span class="font-mono">2h ago</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Badge -->
+                        <span class="bg-[#fdfbf7] text-[#c59b27] border border-[#ede4d5] text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            3 Tenants
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xs sm:text-[13px] text-[#4a3e47] leading-relaxed">
+                        Mesh Access Point #2B disconnected unexpectedly. North wing student study hub affected.
+                    </p>
+
+                    <!-- Actions (Remote Reboot + Dispatch IT) -->
+                    <div class="grid grid-cols-2 gap-2.5 pt-1">
+                        <button type="button" onclick="remoteRebootAP()" class="bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#c59b27] text-xs font-bold py-2.5 px-3 rounded-2xl border border-[#ede4d5] flex items-center justify-center gap-1.5 transition">
+                            <svg class="w-4 h-4 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            <span id="rebootText">Remote Reboot</span>
+                        </button>
+                        <button type="button" onclick="dispatchITStaff()" class="bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] text-xs font-bold py-2.5 px-3 rounded-2xl flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                            <span>Dispatch IT</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 4: ROOM 301 • BALCONY SENSOR LOW BAT (Low Priority) -->
+                <div id="card-301" class="maintenance-card bg-white rounded-3xl p-5 border border-[#ede4d5] shadow-xs space-y-3 relative transition-all" data-status="All">
+                    <!-- Top row: Icon + Location + Sensor Low Bat badge -->
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-[#e2b842]/15 text-[#c59b27] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-base font-black text-[#1a1016] leading-snug">Room 301</h3>
+                                    <span class="text-xs text-[#6e5d68] font-bold">• Balcony</span>
+                                </div>
+                                <p class="text-[11px] text-[#6e5d68] font-medium mt-0.5">Low Priority • Yesterday</p>
+                            </div>
+                        </div>
+
+                        <!-- Badge -->
+                        <span class="bg-amber-50 text-amber-800 border border-amber-200/80 text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            Sensor Low Bat
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xs sm:text-[13px] text-[#4a3e47] leading-relaxed">
+                        Mechanical deadbolt OK, smart latch offline.
+                    </p>
+
+                    <!-- Action: Assign Warden -->
+                    <div class="pt-1 flex justify-end">
+                        <button type="button" onclick="assignWarden('Room 301 Balcony')" class="bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#1a1016] text-xs font-bold py-2.5 px-5 rounded-2xl border border-[#ede4d5] transition">
+                            Assign Warden
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM PRIMARY ACTION BUTTON: + Log New Maintenance Issue -->
+            <div class="pt-2">
+                <button type="button" onclick="openNewIssueModal()" class="w-full bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] text-xs sm:text-sm font-black py-4 px-6 rounded-2xl flex items-center justify-center gap-2.5 shadow-md shadow-[#14070f]/20 transition transform active:scale-[0.99] cursor-pointer">
+                    <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                    <span>Log New Maintenance Issue</span>
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ASSIGN MAINTENANCE STAFF MODAL -->
+    <div id="assignModal" class="fixed inset-0 z-50 bg-[#14070f]/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl border border-[#ede4d5]">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                <div>
+                    <h3 class="text-base font-bold text-[#1a1016]">Assign Duty Staff</h3>
+                    <p id="assignModalSub" class="text-[11px] text-[#6e5d68]">Dispatch specialized technician</p>
+                </div>
+                <button type="button" onclick="closeAssignModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">✕</button>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <label class="p-3 rounded-2xl border border-[#ede4d5] bg-[#fdfbf7] flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-2.5">
+                        <input type="radio" name="tech_choice" value="Ramesh Kumar (HVAC Lead)" checked class="text-[#c59b27] focus:ring-[#e2b842]">
+                        <div>
+                            <p class="font-bold text-[#1a1016]">Ramesh Kumar (HVAC Lead)</p>
+                            <p class="text-[10px] text-emerald-600 font-semibold">● Ready On-site • Floor 1</p>
+                        </div>
+                    </div>
+                </label>
+                <label class="p-3 rounded-2xl border border-slate-200 hover:bg-slate-50 flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-2.5">
+                        <input type="radio" name="tech_choice" value="Suresh M. (Plumbing & Sanitation)" class="text-[#c59b27] focus:ring-[#e2b842]">
+                        <div>
+                            <p class="font-bold text-[#1a1016]">Suresh M. (Plumbing & Sanitation)</p>
+                            <p class="text-[10px] text-amber-600 font-semibold">● In Room 204 • Free in 15m</p>
+                        </div>
+                    </div>
+                </label>
+                <label class="p-3 rounded-2xl border border-slate-200 hover:bg-slate-50 flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-2.5">
+                        <input type="radio" name="tech_choice" value="David K. (Electrical Systems)" class="text-[#c59b27] focus:ring-[#e2b842]">
+                        <div>
+                            <p class="font-bold text-[#1a1016]">David K. (Electrical Systems)</p>
+                            <p class="text-[10px] text-emerald-600 font-semibold">● Available On-site</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="pt-2 flex gap-2">
+                <button type="button" onclick="closeAssignModal()" class="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs hover:bg-slate-50">Cancel</button>
+                <button type="button" onclick="confirmDispatch()" class="flex-1 py-2.5 rounded-xl bg-[#14070f] text-[#faf6f0] font-bold text-xs hover:bg-[#1f0a18]">Dispatch Staff</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOG NEW MAINTENANCE ISSUE MODAL -->
+    <div id="newIssueModal" class="fixed inset-0 z-50 bg-[#14070f]/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#ede4d5] max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                <div>
+                    <h3 class="text-base font-bold text-[#1a1016]">Log Maintenance Issue</h3>
+                    <p class="text-[11px] text-[#6e5d68]">Create a new work order for Taamara Co-Live</p>
+                </div>
+                <button type="button" onclick="closeNewIssueModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">✕</button>
+            </div>
+
+            <form id="newIssueForm" onsubmit="submitNewIssue(event)" class="space-y-3.5 text-xs">
+                <div>
+                    <label class="block text-slate-700 font-bold mb-1">Room / Location</label>
+                    <select id="issueRoom" required class="w-full bg-[#faf6f0] border border-[#ede4d5] rounded-xl px-3 py-2.5 text-[#1a1016] font-medium focus:ring-2 focus:ring-[#e2b842] focus:outline-none">
+                        <option value="Room 101 • Standard Double">Room 101 • Standard Double</option>
+                        <option value="Room 102 • 4-Bed Dorm">Room 102 • 4-Bed Dorm</option>
+                        <option value="Room 103 • Single Suite">Room 103 • Single Suite</option>
+                        <option value="Room 104 • 2-Sharing">Room 104 • 2-Sharing</option>
+                        <option value="Room 201 • 3-Bed Deluxe">Room 201 • 3-Bed Deluxe</option>
+                        <option value="Room 204 • 3-Bed Deluxe">Room 204 • 3-Bed Deluxe</option>
+                        <option value="Room 205 • Double Suite">Room 205 • Double Suite</option>
+                        <option value="Floor 2 Corridors / Study Hub">Floor 2 Corridors / Study Hub</option>
+                        <option value="Floor 3 Terrace Lounge">Floor 3 Terrace Lounge</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-slate-700 font-bold mb-1">Category</label>
+                        <select id="issueCategory" class="w-full bg-[#faf6f0] border border-[#ede4d5] rounded-xl px-3 py-2.5 text-[#1a1016] font-medium focus:ring-2 focus:ring-[#e2b842] focus:outline-none">
+                            <option value="HVAC">AC & Ventilation</option>
+                            <option value="Plumbing">Plumbing & Valves</option>
+                            <option value="Electrical">Electrical & Lighting</option>
+                            <option value="Internet">WiFi & Networking</option>
+                            <option value="Carpentry">Locks & Smart Latch</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-700 font-bold mb-1">Priority</label>
+                        <select id="issuePriority" class="w-full bg-[#faf6f0] border border-[#ede4d5] rounded-xl px-3 py-2.5 text-[#1a1016] font-medium focus:ring-2 focus:ring-[#e2b842] focus:outline-none">
+                            <option value="Urgent">Urgent (Immediate)</option>
+                            <option value="High">High Priority</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="Low">Low / Scheduled</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-slate-700 font-bold mb-1">Issue Title</label>
+                    <input type="text" id="issueTitle" required placeholder="e.g. Geyser tripping circuit breaker" class="w-full bg-[#faf6f0] border border-[#ede4d5] rounded-xl px-3 py-2.5 text-[#1a1016] font-medium focus:ring-2 focus:ring-[#e2b842] focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-slate-700 font-bold mb-1">Description & Resident Notes</label>
+                    <textarea id="issueDesc" rows="3" required placeholder="Detailed notes on what needs repair..." class="w-full bg-[#faf6f0] border border-[#ede4d5] rounded-xl px-3 py-2.5 text-[#1a1016] font-medium focus:ring-2 focus:ring-[#e2b842] focus:outline-none"></textarea>
+                </div>
+
+                <div class="pt-2 flex gap-2">
+                    <button type="button" onclick="closeNewIssueModal()" class="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs hover:bg-slate-50">Cancel</button>
+                    <button type="submit" class="flex-1 py-3 rounded-xl bg-[#14070f] text-[#faf6f0] font-bold text-xs hover:bg-[#1f0a18]">Submit Work Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CALL TECHNICIAN MODAL -->
+    <div id="callModal" class="fixed inset-0 z-50 bg-[#14070f]/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-3xl max-w-xs w-full p-6 text-center space-y-4 shadow-2xl border border-[#ede4d5]">
+            <div class="w-12 h-12 rounded-full bg-[#e2b842]/15 text-[#c59b27] mx-auto flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+                <h3 class="text-base font-bold text-[#1a1016]" id="callTechName">Call Technician</h3>
+                <p class="text-xs text-[#6e5d68] font-mono mt-0.5" id="callTechPhone">+91 7386647564</p>
+            </div>
+            <div class="pt-2 flex gap-2 text-xs font-bold">
+                <button type="button" onclick="closeCallModal()" class="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50">Dismiss</button>
+                <a id="callTelLink" href="tel:+917386647564" class="flex-1 py-2.5 rounded-xl bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] flex items-center justify-center gap-1">Dial Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastSuccess" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-[#14070f] text-[#faf6f0] border border-[#e2b842]/40 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 transition-all duration-300 -translate-y-24 opacity-0 pointer-events-none">
+        <div class="w-7 h-7 rounded-full bg-[#e2b842]/20 text-[#f1d278] flex items-center justify-center font-bold">
+            ✓
+        </div>
+        <div>
+            <h4 class="text-xs font-bold" id="toastTitle">Success</h4>
+            <p class="text-[10px] text-[#beb5a7]" id="toastMsg">Action executed successfully.</p>
+        </div>
+    </div>
+
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#faf6f0]/95 backdrop-blur-md border-t border-[#ede4d5] z-40 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-[#6e5d68] shadow-lg">
+        <a href="/admin/dashboard" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="/admin/tenants" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span>Tenants</span>
+        </a>
+        <a href="/admin/rooms/floor-1" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <span>Rooms</span>
+        </a>
+        <a href="/admin/finance" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Finance</span>
+        </a>
+        <a href="/admin/more" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <!-- SCRIPTS -->
+    <script src="/js/sidebar-scroll.js"></script>
+    <script>
+        let currentFilter = 'Urgent';
+
+        function filterCategory(cat) {
+            currentFilter = cat;
+
+            document.querySelectorAll('.filter-pill').forEach(p => {
+                p.className = 'filter-pill bg-white hover:bg-slate-100 text-[#1a1016] border border-[#ede4d5] text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition flex items-center gap-1.5 shadow-2xs';
+            });
+
+            const pillMap = {
+                'All': 'pillAll',
+                'Urgent': 'pillUrgent',
+                'InProgress': 'pillInProgress',
+                'Resolved': 'pillResolved'
+            };
+
+            const activePill = document.getElementById(pillMap[cat]);
+            if (activePill) {
+                activePill.className = 'filter-pill bg-[#14070f] text-[#faf6f0] text-xs font-extrabold px-4 py-2 rounded-full whitespace-nowrap shadow-sm flex items-center gap-1.5 border border-[#3d1630]';
+            }
+
+            const cards = document.querySelectorAll('.maintenance-card');
+            cards.forEach(card => {
+                const status = card.getAttribute('data-status') || '';
+                if (cat === 'All') {
+                    card.style.display = 'block';
+                } else if (cat === 'Urgent') {
+                    card.style.display = status.includes('Urgent') ? 'block' : 'none';
+                } else if (cat === 'InProgress') {
+                    card.style.display = status.includes('InProgress') ? 'block' : 'none';
+                } else if (cat === 'Resolved') {
+                    card.style.display = status.includes('Resolved') ? 'block' : 'none';
+                }
+            });
+        }
+
+        // Initialize with Urgent filter active
+        filterCategory('Urgent');
+
+        let pendingAssignTarget = null;
+        function openAssignModal(room, issue, category) {
+            pendingAssignTarget = { room, issue, category };
+            document.getElementById('assignModalSub').textContent = `${room} • ${issue}`;
+            const m = document.getElementById('assignModal');
+            m.classList.remove('opacity-0', 'pointer-events-none');
+        }
+        function closeAssignModal() {
+            const m = document.getElementById('assignModal');
+            m.classList.add('opacity-0', 'pointer-events-none');
+        }
+        function confirmDispatch() {
+            const selected = document.querySelector('input[name="tech_choice"]:checked').value;
+            closeAssignModal();
+            showToast('Duty Staff Dispatched', `${selected} assigned to ${pendingAssignTarget.room}.`);
+            
+            // update card 102 state
+            const card = document.getElementById('card-102');
+            if (card) {
+                card.setAttribute('data-status', 'InProgress');
+                card.classList.remove('border-l-red-500');
+                card.classList.add('border-l-[#c59b27]');
+                const badge = card.querySelector('span.bg-red-50');
+                if (badge) {
+                    badge.className = 'bg-[#fdfbf7] text-[#c59b27] border border-[#ede4d5] text-[10px] font-extrabold px-2.5 py-1 rounded-full flex items-center gap-1';
+                    badge.innerHTML = '<span>Assigned to ' + selected.split(' ')[0] + '</span>';
+                }
+            }
+            const urgentStat = document.getElementById('statUrgent');
+            if (urgentStat && parseInt(urgentStat.textContent) > 0) {
+                urgentStat.textContent = parseInt(urgentStat.textContent) - 1;
+                document.getElementById('pillUrgentCount').textContent = urgentStat.textContent;
+            }
+        }
+
+        function markCardResolved(cardId, title) {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.classList.add('fade-out-collapse');
+                setTimeout(() => {
+                    card.remove();
+                    showToast('Ticket Resolved', `${title} marked as completed.`);
+                }, 260);
+            }
+        }
+
+        function remoteRebootAP() {
+            const txt = document.getElementById('rebootText');
+            txt.textContent = 'Pinging & Rebooting...';
+            showToast('Reboot Signal Sent', 'Sending SNMP reset to Mesh AP #2B...');
+            setTimeout(() => {
+                txt.textContent = 'Online • OK';
+                showToast('AP #2B Restored', 'Mesh node rebooted successfully. Latency 14ms.');
+            }, 1800);
+        }
+
+        function dispatchITStaff() {
+            showToast('IT Team Alerted', 'Network engineer alerted for Floor 2 corridor hub.');
+        }
+
+        function assignWarden(loc) {
+            showToast('Warden Assigned', `Resident Warden requested to replace battery at ${loc}.`);
+        }
+
+        function callTechnician(name, phone) {
+            document.getElementById('callTechName').textContent = `Call ${name}`;
+            document.getElementById('callTechPhone').textContent = phone;
+            document.getElementById('callTelLink').href = `tel:${phone}`;
+            const m = document.getElementById('callModal');
+            m.classList.remove('opacity-0', 'pointer-events-none');
+        }
+        function closeCallModal() {
+            const m = document.getElementById('callModal');
+            m.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function openNewIssueModal() {
+            const m = document.getElementById('newIssueModal');
+            m.classList.remove('opacity-0', 'pointer-events-none');
+        }
+        function closeNewIssueModal() {
+            const m = document.getElementById('newIssueModal');
+            m.classList.add('opacity-0', 'pointer-events-none');
+        }
+        function submitNewIssue(e) {
+            e.preventDefault();
+            const room = document.getElementById('issueRoom').value;
+            const category = document.getElementById('issueCategory').value;
+            const priority = document.getElementById('issuePriority').value;
+            const title = document.getElementById('issueTitle').value;
+            const desc = document.getElementById('issueDesc').value;
+
+            closeNewIssueModal();
+            showToast('Work Order Created', `Ticket logged for ${room} (${priority} Priority).`);
+
+            // Prepend new card to list
+            const container = document.getElementById('maintenanceCardsList');
+            const cardId = 'card-custom-' + Date.now();
+            const newCard = document.createElement('div');
+            newCard.id = cardId;
+            newCard.className = `maintenance-card bg-white rounded-3xl p-5 border border-[#ede4d5] border-l-4 ${priority === 'Urgent' ? 'border-l-red-500' : 'border-l-amber-500'} shadow-xs space-y-3 relative transition-all`;
+            newCard.setAttribute('data-status', priority);
+
+            newCard.innerHTML = `
+                <div class="flex items-start justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0">
+                            ⚙
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-base font-black text-[#1a1016] leading-snug">${room.split('•')[0]}</h3>
+                            </div>
+                            <span class="text-[10px] font-black ${priority === 'Urgent' ? 'text-red-600' : 'text-amber-700'} tracking-wider">${priority.toUpperCase()} PRIORITY</span>
+                        </div>
+                    </div>
+                    <span class="bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-bold px-2.5 py-1 rounded-full">New Work Order</span>
+                </div>
+                <div>
+                    <h4 class="text-sm font-extrabold text-[#1a1016]">${title}</h4>
+                    <p class="text-xs text-[#4a3e47] leading-relaxed mt-1">${desc}</p>
+                </div>
+                <div class="pt-1 flex gap-2">
+                    <button type="button" onclick="openAssignModal('${room.split('•')[0]}', '${title}', '${category}')" class="flex-1 bg-[#14070f] text-[#faf6f0] text-xs font-bold py-2.5 rounded-xl hover:bg-[#1f0a18]">Assign Staff</button>
+                    <button type="button" onclick="markCardResolved('${cardId}', '${title}')" class="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50">Mark Done</button>
+                </div>
+            `;
+
+            container.prepend(newCard);
+            document.getElementById('newIssueForm').reset();
+        }
+
+        function showToast(title, msg) {
+            const toast = document.getElementById('toastSuccess');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMsg').textContent = msg;
+
+            toast.classList.remove('-translate-y-24', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('-translate-y-24', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 2600);
+        }
+    </script>
+</body>
+</html>

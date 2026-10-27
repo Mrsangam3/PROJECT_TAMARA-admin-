@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Ledger - TAAMARA CO-LIVE SPACES</title>
+        <!-- Google Fonts (Official TAAMARA Typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- TAAMARA Brand Design System & Themes -->
+    <link rel="stylesheet" href="/css/taamara-theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/taamara-theme.js"></script>
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .custom-scrollbar {
+            overflow-y: auto !important;
+            scrollbar-width: thin;
+            scrollbar-color: #475569 transparent;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            display: block !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-[#faf6f0] text-[#1a1016] min-h-screen">
+
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
+        <!-- Sidebar Header / Branding (Fixed) -->
+        <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-xl shadow-md shadow-[#e2b842]/20">
+                    T
+                </div>
+                <div>
+                    <h1 class="text-base font-serif font-bold tracking-tight text-[#faf6f0] leading-tight">TAAMARA CO-LIVE</h1>
+                    <p class="text-[10px] text-[#e2b842] font-bold uppercase tracking-wider">Nanakramguda, Hyd</p>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between bg-[#1f0a18] border border-[#3d1630] px-3 py-2 rounded-xl text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-[#ede4d5] font-medium text-[11px]">Biometric Gate Live</span>
+                </div>
+                <a href="/" target="_blank" class="text-[#e2b842] hover:text-[#f1d278] text-[11px] font-bold">Website ↗</a>
+            </div>
+        </div>
+
+        <!-- Scrollable Navigation Links -->
+        <div id="sidebarScrollArea" class="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+            <nav class="p-4 space-y-6 text-xs">
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Management</p>
+                    <div class="space-y-1">
+                        <!-- Dashboard Overview -->
+                        <a href="/admin/dashboard" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            <span>Dashboard Overview</span>
+                        </a>
+
+                        <!-- Residents Directory -->
+                        <a href="/admin/residents" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                <span>Residents Directory</span>
+                            </div>
+                            <span class="bg-[#2a0e21] text-[#ede4d5] text-[10px] px-2 py-0.5 rounded-md font-semibold border border-[#3d1630]">68</span>
+                        </a>
+
+                        <!-- Rooms & Sharing Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                    <span>Rooms & Sharing</span>
+                                </div>
+                                <span class="bg-emerald-950/80 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md font-bold border border-emerald-800/40">7 Beds Free</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
+                                </a>
+                                <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
+                                </a>
+                                <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
+                                </a>
+                                <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
+                                    <span>+ Add New Room</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Finance & Ledger Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/finance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition bg-[#e2b842]/15 text-[#f1d278] border border-[#e2b842]/30 font-bold shadow-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Finance & Ledger</span>
+                                </div>
+                                <span class="bg-[#2a0e21] text-[#e2b842] text-[10px] px-2 py-0.5 rounded-md font-bold border border-[#3d1630]">₹6.85L</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Record Entry</span>
+                                </a>
+                                <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#f1d278] bg-[#2a0e21] font-bold">
+                                    <span>↳ Expenses Ledger</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Operations</p>
+                    <div class="space-y-1">
+                        <a href="/admin/assign-bed" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>Assign Bed (Check-In)</span>
+                        </a>
+
+                        <a href="/admin/new-checkins" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                                <span>New Check-ins</span>
+                            </div>
+                            <span class="text-[10px] bg-[#2a0e21] text-[#f1d278] font-bold px-2 py-0.5 rounded border border-[#3d1630]">3 Pending</span>
+                        </a>
+
+                        <a href="/admin/pending-dues" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span>Pending Dues</span>
+                            </div>
+                            <span class="bg-red-950/80 text-red-300 text-[10px] px-2 py-0.5 rounded-md font-bold border border-red-800/40">₹42.5K</span>
+                        </a>
+
+                        <a href="/admin/paid-tenants" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                <span>Settled Receipts</span>
+                            </div>
+                            <span class="text-[10px] text-[#a0909c]">64 Paid</span>
+                        </a>
+
+                        <!-- Maintenance Requests -->
+                        <a href="/admin/maintenance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                <span>Maintenance Requests</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 font-bold px-2 py-0.5 rounded-full border border-red-500/30">5 Active</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="/admin/notifications" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                <span>Notifications</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500 text-white font-bold px-1.5 py-0.2 rounded-full">4</span>
+                        </a>
+
+                        <!-- More & Profile Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/more" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span>More & Profile</span>
+                                </div>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Edit Profile</span>
+                                    
+                                </a>
+                                <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
+                                    <span>↳ Logout Confirmation</span>
+                                    
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Fixed Bottom Bar -->
+        <div class="p-4 border-t border-[#3d1630] bg-[#14070f]/95 flex-shrink-0">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-[#e2b842]/20 text-[#f1d278] flex items-center justify-center font-bold text-sm border border-[#e2b842]/30">AM</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-[#faf6f0] truncate">Alex Morgan</p>
+                    <p class="text-[10px] text-[#a0909c] truncate">Super Admin • Sunrise</p>
+                </div>
+                <a href="/admin/logout-confirmation" class="text-[#a0909c] hover:text-red-400 p-1.5 transition" title="Logout">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                </a>
+            </div>
+            <p class="text-[10px] text-[#6e5d68] text-center">TAAMARA HavenHostel v2.4.1</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="lg:pl-64 flex flex-col min-h-screen pb-24 lg:pb-12">
+        
+        <!-- DESKTOP TOP BAR (Visible on lg screens) -->
+        <header class="hidden lg:flex h-16 bg-white border-b border-slate-200 px-6 lg:px-8 items-center justify-between sticky top-0 z-30">
+            <div class="flex items-center gap-3">
+                <a href="/admin/finance" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </a>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h2 class="text-base font-bold text-slate-900 leading-tight">Expenses Ledger</h2>
+                        <span class="text-[10px] bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Operational Disbursements</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 font-medium">Billing Cycle: October 2026 • Target Budget: $10,000 (₹3,15,000)</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+                <a href="/admin/record-entry?type=expense" class="bg-[#14070f] hover:bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-2 shadow-sm transition">
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    <span>Add New Expense Voucher</span>
+                </a>
+                <button onclick="exportExpensesCSV()" class="text-xs font-bold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Export CSV</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- MOBILE TOP BAR (Exact match to Mockup top bar) -->
+        <div class="lg:hidden bg-white border-b border-slate-200 px-4 py-2.5 sticky top-0 z-30 flex items-center justify-between">
+            <div>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-extrabold text-slate-900 font-serif">HavenHostel</span>
+                </div>
+                <p class="text-[10px] text-slate-500 font-medium -mt-0.5">Finance</p>
+            </div>
+            <a href="/admin/notifications" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 relative">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                <span class="absolute top-2 right-2 w-2 h-2 bg-red-600 rounded-full"></span>
+            </a>
+        </div>
+
+        <!-- MAIN CONTAINER -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-2xl lg:max-w-4xl w-full mx-auto space-y-4">
+
+            <!-- SUB-HEADER BAR (Back button + Title/Subtitle + Filter + Download Buttons) -->
+            <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <a href="/admin/finance" class="w-9 h-9 rounded-2xl bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-slate-700 flex items-center justify-center transition shadow-2xs">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    </a>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight font-serif">Expenses Ledger</h1>
+                        <p class="text-xs text-slate-500 font-medium mt-0.5">October 2025 • Total: <span class="font-bold text-slate-800">$8,120.00</span> <span class="text-slate-400">(₹2,59,000)</span></p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-1.5">
+                    <!-- Filter Button -->
+                    <button type="button" onclick="toggleFilterDrawer()" class="w-9 h-9 rounded-2xl bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#c59b27] flex items-center justify-center transition shadow-2xs" title="Filter Expenses">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+                    </button>
+                    <!-- Download Button -->
+                    <button type="button" onclick="exportExpensesCSV()" class="w-9 h-9 rounded-2xl bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#c59b27] flex items-center justify-center transition shadow-2xs" title="Export Ledger">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TOP SUB-TABS NAVIGATION (Matches Mockup) -->
+            <div class="p-1 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] flex items-center gap-1 shadow-2xs">
+                <a href="/admin/pending-dues" class="flex-1 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-500 hover:text-slate-800 text-center transition">
+                    Payments & Dues
+                </a>
+                <div class="flex-1 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-900 shadow-sm flex items-center justify-center gap-1.5 transition">
+                    <span class="w-2 h-2 rounded-full bg-[#14070f]"></span>
+                    <span>Expenses</span>
+                </div>
+                <button type="button" onclick="showReportsToast()" class="flex-1 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-500 hover:text-slate-800 text-center transition">
+                    Reports
+                </button>
+            </div>
+
+            <!-- TOTAL DISBURSED CARD (Matches Mockup) -->
+            <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm space-y-4">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <p class="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">TOTAL DISBURSED (OCT)</p>
+                        <div class="flex items-baseline gap-2 mt-1">
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-none">$8,120</h2>
+                            <span class="text-xs sm:text-sm text-slate-500 font-medium">/ 32 Vouchers</span>
+                        </div>
+                    </div>
+                    
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200/60 px-2.5 py-1 rounded-full flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                        <span>+4.8% vs Sep</span>
+                    </span>
+                </div>
+
+                <!-- Multi-segment budget progress bar -->
+                <div class="space-y-1.5">
+                    <div class="h-2.5 w-full bg-slate-100 rounded-full flex overflow-hidden">
+                        <div class="h-full bg-[#14070f] transition-all duration-500" style="width: 42%;" title="Utilities (42%)"></div>
+                        <div class="h-full bg-slate-800 transition-all duration-500" style="width: 35%;" title="Maintenance (35%)"></div>
+                        <div class="h-full bg-teal-400 transition-all duration-500" style="width: 23%;" title="Supplies (23%)"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-[11px] font-medium text-slate-500">
+                        <span>Target Budget: <strong class="text-slate-800">$10,000</strong></span>
+                        <span><strong class="text-slate-900 font-bold">81.2%</strong> Utilized</span>
+                    </div>
+                </div>
+
+                <!-- 3 Mini Category Summary Cards -->
+                <div class="grid grid-cols-3 gap-2.5 pt-1">
+                    <button type="button" onclick="filterByCategory('Utilities')" class="bg-[#fdfbf7] hover:bg-[#fdfbf7] border border-[#ede4d5] rounded-2xl p-3 text-left transition group">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-[#14070f]"></span>
+                            <span class="text-[11px] font-bold text-slate-600">Utilities</span>
+                        </div>
+                        <p class="text-base sm:text-lg font-black text-slate-900 mt-1">$3,450</p>
+                        <p class="text-[10px] text-slate-400 font-medium">42% total</p>
+                    </button>
+
+                    <button type="button" onclick="filterByCategory('Maintenance')" class="bg-slate-50 hover:bg-slate-100/80 border border-slate-200/80 rounded-2xl p-3 text-left transition group">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                            <span class="text-[11px] font-bold text-slate-600">Maint.</span>
+                        </div>
+                        <p class="text-base sm:text-lg font-black text-slate-900 mt-1">$2,870</p>
+                        <p class="text-[10px] text-slate-400 font-medium">35% total</p>
+                    </button>
+
+                    <button type="button" onclick="filterByCategory('Supplies')" class="bg-teal-50/50 hover:bg-teal-50 border border-teal-100/80 rounded-2xl p-3 text-left transition group">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                            <span class="text-[11px] font-bold text-slate-600">Supplies</span>
+                        </div>
+                        <p class="text-base sm:text-lg font-black text-slate-900 mt-1">$1,800</p>
+                        <p class="text-[10px] text-slate-400 font-medium">23% total</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- SEARCH INPUT (Matches Mockup) -->
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <input type="text" id="expenseSearch" oninput="handleSearch(this.value)" placeholder="Search expenses, vendors, voucher #..." class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200/90 rounded-2xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e2b842] focus:border-transparent shadow-xs transition">
+            </div>
+
+            <!-- CATEGORY FILTER CHIPS (Matches Mockup) -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+                <button type="button" onclick="filterByCategory('All')" id="pillAll" class="category-pill bg-[#14070f] text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap transition flex items-center gap-1.5">
+                    <span>All</span>
+                    <span class="bg-white/20 text-[10px] px-1.5 py-0.2 rounded-full font-semibold">32</span>
+                </button>
+                <button type="button" onclick="filterByCategory('Utilities')" id="pillUtilities" class="category-pill bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Utilities
+                </button>
+                <button type="button" onclick="filterByCategory('Maintenance')" id="pillMaintenance" class="category-pill bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Maintenance
+                </button>
+                <button type="button" onclick="filterByCategory('Supplies')" id="pillSupplies" class="category-pill bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Supplies
+                </button>
+                <button type="button" onclick="filterByCategory('Payroll')" id="pillPayroll" class="category-pill bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Payroll
+                </button>
+                <button type="button" onclick="filterByCategory('Tech / Security')" id="pillTech" class="category-pill bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition">
+                    Tech / Security
+                </button>
+            </div>
+
+            <!-- EXPENSE ITEMS LIST (Matches Mockup) -->
+            <div id="expensesContainer" class="space-y-3.5 pt-1">
+                
+                <!-- Voucher 1 • Water & Electricity -->
+                <div class="expense-card bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-category="Utilities" data-voucher="#EXP-2025-104" data-title="Water & Electricity Bill" data-vendor="City Grid Power Co.">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-mono text-xs text-[#c59b27] font-bold">#EXP-2025-104</span>
+                            <span class="text-[10px] font-bold text-[#c59b27] bg-[#fdfbf7] px-2.5 py-0.5 rounded-full border border-[#ede4d5] flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#14070f]"></span> Utilities
+                            </span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-base sm:text-lg font-black text-red-600 leading-none">-$1,250.00</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Operational Bank</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">Water & Electricity Bill</h3>
+                        <p class="text-xs text-slate-500 font-medium">City Grid Power Co. • Oct 20</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Paid & Verified
+                        </span>
+                        <button type="button" onclick="previewInvoice('#EXP-2025-104', 'Water & Electricity Bill', '$1,250.00', 'City Grid Power Co.')" class="text-[#c59b27] hover:text-[#c59b27] font-bold flex items-center gap-1 transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            <span>Invoice.pdf</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Voucher 2 • Plumbing & Valve -->
+                <div class="expense-card bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-category="Maintenance" data-voucher="#EXP-2025-102" data-title="Plumbing & Valve Replacement" data-vendor="Apex Facility Repairs">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-mono text-xs text-slate-700 font-bold">#EXP-2025-102</span>
+                            <span class="text-[10px] font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-slate-800"></span> Maintenance
+                            </span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-base sm:text-lg font-black text-red-600 leading-none">-$480.00</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Petty Cash</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">Plumbing & Valve Replacement</h3>
+                        <p class="text-xs text-slate-500 font-medium">Apex Facility Repairs • Oct 18</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-700 font-bold flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Paid
+                        </span>
+                        <span class="text-slate-500 font-medium flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            Room 104 Repair
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Voucher 3 • High-Speed Fiber Internet Bill -->
+                <div class="expense-card bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-category="Utilities" data-voucher="#EXP-2025-098" data-title="High-Speed Fiber Internet Bill" data-vendor="MetroNet Fiber Enterprise">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-mono text-xs text-[#c59b27] font-bold">#EXP-2025-098</span>
+                            <span class="text-[10px] font-bold text-[#c59b27] bg-[#fdfbf7] px-2.5 py-0.5 rounded-full border border-[#ede4d5] flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#14070f]"></span> Utilities
+                            </span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-base sm:text-lg font-black text-red-600 leading-none">-$320.00</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Auto-debit Bank</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">High-Speed Fiber Internet Bill</h3>
+                        <p class="text-xs text-slate-500 font-medium">MetroNet Fiber Enterprise • Oct 15</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Cleared
+                        </span>
+                        <span class="text-slate-500 font-medium flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+                            Floor 1–3 Mesh
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Voucher 4 • Weekly Cleaning & Sanitation Supplies -->
+                <div class="expense-card bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-category="Supplies" data-voucher="#EXP-2025-095" data-title="Weekly Cleaning & Sanitation Supplies" data-vendor="CleanPro Wholesale">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-mono text-xs text-teal-700 font-bold">#EXP-2025-095</span>
+                            <span class="text-[10px] font-bold text-teal-800 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200/60 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Supplies
+                            </span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-base sm:text-lg font-black text-red-600 leading-none">-$640.00</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Cash Drawer</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">Weekly Cleaning & Sanitation Supplies</h3>
+                        <p class="text-xs text-slate-500 font-medium">CleanPro Wholesale • Oct 12</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-700 font-bold flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            Approved by Alex M.
+                        </span>
+                        <button type="button" onclick="previewInvoice('#EXP-2025-095', 'Weekly Cleaning & Sanitation Supplies', '$640.00', 'CleanPro Wholesale')" class="text-[#c59b27] hover:text-[#c59b27] font-bold flex items-center gap-1 transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <span>Receipt</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Voucher 5 • Security CCTV Maintenance -->
+                <div class="expense-card bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-category="Tech / Security" data-voucher="#EXP-2025-091" data-title="Security CCTV Maintenance" data-vendor="SafeGuard Tech Solutions">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-mono text-xs text-indigo-700 font-bold">#EXP-2025-091</span>
+                            <span class="text-[10px] font-bold text-indigo-800 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200/60 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span> Tech / Security
+                            </span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-base sm:text-lg font-black text-red-600 leading-none">-$260.00</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Bank Transfer</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">Security CCTV Maintenance</h3>
+                        <p class="text-xs text-slate-500 font-medium">SafeGuard Tech Solutions • Oct 08</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Completed
+                        </span>
+                        <span class="text-slate-500 font-medium flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                            8 Channels Rec.
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Voucher 6 • Diesel Generator Fuel -->
+                <div class="expense-card bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-category="Utilities" data-voucher="#EXP-2025-088" data-title="Diesel Generator Fuel (500L)" data-vendor="IOCL Commercial Depot">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-mono text-xs text-[#c59b27] font-bold">#EXP-2025-088</span>
+                            <span class="text-[10px] font-bold text-[#c59b27] bg-[#fdfbf7] px-2.5 py-0.5 rounded-full border border-[#ede4d5] flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#14070f]"></span> Utilities
+                            </span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-base sm:text-lg font-black text-red-600 leading-none">-$750.00</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Operational Bank</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">Diesel Generator Fuel (500L)</h3>
+                        <p class="text-xs text-slate-500 font-medium">IOCL Commercial Depot • Oct 05</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Delivered & Verified
+                        </span>
+                        <span class="text-slate-500 font-medium flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            Tank Level 94%
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Voucher 7 • Housekeeping & Security Staffing -->
+                <div class="expense-card bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-category="Payroll" data-voucher="#EXP-2025-080" data-title="Housekeeping & Security Guard Staffing" data-vendor="Knight Facility Staffing Pvt Ltd">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-mono text-xs text-purple-700 font-bold">#EXP-2025-080</span>
+                            <span class="text-[10px] font-bold text-purple-800 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200/60 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-600"></span> Payroll
+                            </span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-base sm:text-lg font-black text-red-600 leading-none">-$2,400.00</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">NEFT / RTGS</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">Housekeeping & Security Guard Staffing</h3>
+                        <p class="text-xs text-slate-500 font-medium">Knight Facility Staffing Pvt Ltd • Oct 01</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Disbursed
+                        </span>
+                        <span class="text-slate-500 font-medium flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            12 Shift Staff
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="emptySearchState" class="hidden text-center py-12 bg-white rounded-3xl border border-slate-200/80 p-6 space-y-3">
+                <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-400 mx-auto flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-slate-800">No vouchers match your filter</h4>
+                <p class="text-xs text-slate-500 max-w-xs mx-auto">Try clearing search keywords or selecting another category.</p>
+                <button type="button" onclick="clearFilters()" class="text-xs font-bold text-[#c59b27] bg-[#fdfbf7] px-3.5 py-1.5 rounded-xl hover:bg-[#e2b842]/15 transition">Reset Filters</button>
+            </div>
+
+            <!-- PRIMARY FLOATING ACTION BUTTON (Matches Mockup) -->
+            <div class="pt-2 pb-6 flex justify-center">
+                <a href="/admin/record-entry?type=expense" class="inline-flex items-center gap-2.5 bg-[#14070f] hover:bg-slate-900 active:scale-95 text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-xl hover:shadow-2xl transition ring-4 ring-white/80">
+                    <div class="w-5 h-5 rounded-full border-2 border-white flex items-center justify-center text-xs">
+                        +
+                    </div>
+                    <span>Add New Expense Voucher</span>
+                </a>
+            </div>
+
+        </main>
+
+        <!-- MOBILE BOTTOM NAVIGATION BAR (Matches Mockup) -->
+        <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#faf6f0]/95 backdrop-blur-md border-t border-[#ede4d5] z-40 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-[#6e5d68] shadow-lg">
+        <a href="/admin/dashboard" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="/admin/tenants" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span>Tenants</span>
+        </a>
+        <a href="/admin/rooms/floor-1" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <span>Rooms</span>
+        </a>
+        <a href="/admin/finance" class="flex flex-col items-center gap-1 transition text-[#c59b27] font-bold">
+            <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Finance</span>
+        </a>
+        <a href="/admin/more" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <span>More</span>
+        </a>
+    </nav>
+
+    </div>
+
+    <!-- FILTER MODAL / DRAWER -->
+    <div id="filterModal" class="fixed inset-0 z-50 bg-slate-950/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl transform scale-95 transition-transform duration-200">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                <h3 class="text-base font-bold text-slate-900">Filter Ledger Records</h3>
+                <button type="button" onclick="toggleFilterDrawer()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">✕</button>
+            </div>
+            
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Time Period</label>
+                    <select id="filterPeriod" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none">
+                        <option>Current Month (Oct 2026)</option>
+                        <option>Last Month (Sep 2026)</option>
+                        <option>Quarter 3 (Jul - Sep 2026)</option>
+                        <option>Financial Year 2026-27</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Payment Method</label>
+                    <select id="filterPayment" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none">
+                        <option value="All">All Payment Channels</option>
+                        <option value="Bank">Bank / NEFT / Auto-Debit</option>
+                        <option value="Cash">Petty Cash / Cash Drawer</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Status</label>
+                    <div class="flex gap-2">
+                        <button type="button" class="flex-1 py-1.5 rounded-lg border border-[#c59b27] bg-[#fdfbf7] text-[#c59b27] font-bold">All (32)</button>
+                        <button type="button" class="flex-1 py-1.5 rounded-lg border border-slate-200 text-slate-600 font-medium">Cleared Only</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-2 flex gap-2">
+                <button type="button" onclick="clearFilters()" class="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs hover:bg-slate-50">Reset</button>
+                <button type="button" onclick="applyModalFilters()" class="flex-1 py-2.5 rounded-xl bg-[#14070f] text-white font-bold text-xs hover:bg-slate-900">Apply Filter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INVOICE PREVIEW MODAL -->
+    <div id="invoiceModal" class="fixed inset-0 z-50 bg-slate-950/50 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl transform scale-95 transition-transform duration-200">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center font-bold">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900" id="invModalTitle">Invoice #EXP-2025-104</h3>
+                        <p class="text-[10px] text-slate-400" id="invModalVendor">City Grid Power Co.</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeInvoiceModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">✕</button>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 space-y-2 text-xs">
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Voucher Reference:</span>
+                    <span class="font-mono font-bold text-slate-900" id="invModalVoucher">#EXP-2025-104</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Gross Amount:</span>
+                    <span class="font-extrabold text-red-600" id="invModalAmt">-$1,250.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Billing Entity:</span>
+                    <span class="font-semibold text-slate-800">Taamara Co-Live Spaces LLP</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Audit Status:</span>
+                    <span class="text-emerald-700 font-bold">✓ Cleared & Digitally Stamped</span>
+                </div>
+            </div>
+
+            <div class="pt-2 flex gap-2">
+                <button type="button" onclick="window.print()" class="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-xs hover:bg-slate-50 flex items-center justify-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                    <span>Print Slip</span>
+                </button>
+                <button type="button" onclick="downloadInvoiceMock()" class="flex-1 py-2.5 rounded-xl bg-[#14070f] text-white font-bold text-xs hover:bg-[#1f0a18] flex items-center justify-center gap-1.5 shadow-sm">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Download PDF</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastSuccess" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-[#14070f] text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 transition-all duration-300 translate-y-[-120%] opacity-0 pointer-events-none">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold" id="toastTitle">Ledger Export Ready</h4>
+            <p class="text-[10px] text-slate-300" id="toastMsg">Vouchers exported to CSV file.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/js/sidebar-scroll.js"></script>
+    <script>
+        let currentFilter = 'All';
+
+        function filterByCategory(category) {
+            currentFilter = category;
+            
+            // Update chip styles
+            document.querySelectorAll('.category-pill').forEach(pill => {
+                pill.className = 'category-pill bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 text-xs font-semibold px-3.5 py-1.5 rounded-full whitespace-nowrap transition';
+            });
+
+            const activePillId = category === 'All' ? 'pillAll' :
+                                 category === 'Utilities' ? 'pillUtilities' :
+                                 category === 'Maintenance' ? 'pillMaintenance' :
+                                 category === 'Supplies' ? 'pillSupplies' :
+                                 category === 'Payroll' ? 'pillPayroll' : 'pillTech';
+            
+            const activePill = document.getElementById(activePillId);
+            if (activePill) {
+                activePill.className = 'category-pill bg-[#14070f] text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap transition';
+            }
+
+            applyFilters();
+        }
+
+        function handleSearch(val) {
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = (document.getElementById('expenseSearch').value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.expense-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                const voucher = (card.getAttribute('data-voucher') || '').toLowerCase();
+                const title = (card.getAttribute('data-title') || '').toLowerCase();
+                const vendor = (card.getAttribute('data-vendor') || '').toLowerCase();
+
+                const matchesCat = (currentFilter === 'All' || cat === currentFilter);
+                const matchesQuery = (!query || voucher.includes(query) || title.includes(query) || vendor.includes(query) || cat.toLowerCase().includes(query));
+
+                if (matchesCat && matchesQuery) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const emptyState = document.getElementById('emptySearchState');
+            if (visibleCount === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+
+        function clearFilters() {
+            document.getElementById('expenseSearch').value = '';
+            filterByCategory('All');
+            const modal = document.getElementById('filterModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function toggleFilterDrawer() {
+            const modal = document.getElementById('filterModal');
+            const isClosed = modal.classList.contains('opacity-0');
+            if (isClosed) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function applyModalFilters() {
+            toggleFilterDrawer();
+            showToast('Filter Applied', 'Viewing filtered disbursements for Oct 2026.');
+        }
+
+        function showReportsToast() {
+            showToast('Financial Reports', 'Generating Cash Flow statement & P&L report for October...');
+        }
+
+        function previewInvoice(voucher, title, amt, vendor) {
+            document.getElementById('invModalTitle').textContent = title;
+            document.getElementById('invModalVendor').textContent = vendor;
+            document.getElementById('invModalVoucher').textContent = voucher;
+            document.getElementById('invModalAmt').textContent = '-' + amt;
+
+            const modal = document.getElementById('invoiceModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeInvoiceModal() {
+            const modal = document.getElementById('invoiceModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function downloadInvoiceMock() {
+            closeInvoiceModal();
+            showToast('Invoice Downloaded', 'Digital tax invoice saved to your device.');
+        }
+
+        function exportExpensesCSV() {
+            const rows = [
+                ["Voucher", "Category", "Description", "Vendor", "Date", "Amount", "Account"],
+                ["EXP-2025-104", "Utilities", "Water & Electricity Bill", "City Grid Power Co.", "2026-10-20", "-1250.00", "Operational Bank"],
+                ["EXP-2025-102", "Maintenance", "Plumbing & Valve Replacement", "Apex Facility Repairs", "2026-10-18", "-480.00", "Petty Cash"],
+                ["EXP-2025-098", "Utilities", "High-Speed Fiber Internet Bill", "MetroNet Fiber Enterprise", "2026-10-15", "-320.00", "Auto-debit Bank"],
+                ["EXP-2025-095", "Supplies", "Weekly Cleaning & Sanitation Supplies", "CleanPro Wholesale", "2026-10-12", "-640.00", "Cash Drawer"],
+                ["EXP-2025-091", "Tech / Security", "Security CCTV Maintenance", "SafeGuard Tech Solutions", "2026-10-08", "-260.00", "Bank Transfer"],
+                ["EXP-2025-088", "Utilities", "Diesel Generator Fuel (500L)", "IOCL Commercial Depot", "2026-10-05", "-750.00", "Operational Bank"],
+                ["EXP-2025-080", "Payroll", "Housekeeping & Security Guard Staffing", "Knight Facility Staffing", "2026-10-01", "-2400.00", "NEFT / RTGS"]
+            ];
+
+            let csvContent = "data:text/csv;charset=utf-8," + rows.map(e => e.join(",")).join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "taamara_expenses_ledger_oct2026.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            showToast('CSV Download Started', 'Expenses ledger exported successfully.');
+        }
+
+        function showToast(title, msg) {
+            const toast = document.getElementById('toastSuccess');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMsg').textContent = msg;
+
+            toast.classList.remove('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

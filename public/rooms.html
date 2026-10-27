@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAAMARA CO-LIVE SPACES - Rooms & Beds Management</title>
+        <!-- Google Fonts (Official TAAMARA Typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- TAAMARA Brand Design System & Themes -->
+    <link rel="stylesheet" href="/css/taamara-theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/taamara-theme.js"></script>
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .custom-scrollbar {
+            overflow-y: auto !important;
+            scrollbar-width: thin;
+            scrollbar-color: #475569 transparent;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            display: block !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-[#faf6f0] text-[#1a1016] min-h-screen">
+
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
+        <!-- Sidebar Header / Branding (Fixed) -->
+        <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-xl shadow-md shadow-[#e2b842]/20">
+                    T
+                </div>
+                <div>
+                    <h1 class="text-base font-serif font-bold tracking-tight text-[#faf6f0] leading-tight">TAAMARA CO-LIVE</h1>
+                    <p class="text-[10px] text-[#e2b842] font-bold uppercase tracking-wider">Nanakramguda, Hyd</p>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between bg-[#1f0a18] border border-[#3d1630] px-3 py-2 rounded-xl text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-[#ede4d5] font-medium text-[11px]">Biometric Gate Live</span>
+                </div>
+                <a href="/" target="_blank" class="text-[#e2b842] hover:text-[#f1d278] text-[11px] font-bold">Website ↗</a>
+            </div>
+        </div>
+
+        <!-- Scrollable Navigation Links -->
+        <div id="sidebarScrollArea" class="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+            <nav class="p-4 space-y-6 text-xs">
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Management</p>
+                    <div class="space-y-1">
+                        <!-- Dashboard Overview -->
+                        <a href="/admin/dashboard" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            <span>Dashboard Overview</span>
+                        </a>
+
+                        <!-- Residents Directory -->
+                        <a href="/admin/residents" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                <span>Residents Directory</span>
+                            </div>
+                            <span class="bg-[#2a0e21] text-[#ede4d5] text-[10px] px-2 py-0.5 rounded-md font-semibold border border-[#3d1630]">68</span>
+                        </a>
+
+                        <!-- Rooms & Sharing Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition bg-[#e2b842]/15 text-[#f1d278] border border-[#e2b842]/30 font-bold shadow-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                    <span>Rooms & Sharing</span>
+                                </div>
+                                <span class="bg-emerald-950/80 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md font-bold border border-emerald-800/40">7 Beds Free</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#f1d278] bg-[#2a0e21] font-bold">
+                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
+                                </a>
+                                <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
+                                </a>
+                                <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
+                                </a>
+                                <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
+                                    <span>+ Add New Room</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Finance & Ledger Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/finance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Finance & Ledger</span>
+                                </div>
+                                <span class="bg-[#2a0e21] text-[#e2b842] text-[10px] px-2 py-0.5 rounded-md font-bold border border-[#3d1630]">₹6.85L</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Record Entry</span>
+                                </a>
+                                <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Expenses Ledger</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Operations</p>
+                    <div class="space-y-1">
+                        <a href="/admin/assign-bed" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>Assign Bed (Check-In)</span>
+                        </a>
+
+                        <a href="/admin/new-checkins" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                                <span>New Check-ins</span>
+                            </div>
+                            <span class="text-[10px] bg-[#2a0e21] text-[#f1d278] font-bold px-2 py-0.5 rounded border border-[#3d1630]">3 Pending</span>
+                        </a>
+
+                        <a href="/admin/pending-dues" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span>Pending Dues</span>
+                            </div>
+                            <span class="bg-red-950/80 text-red-300 text-[10px] px-2 py-0.5 rounded-md font-bold border border-red-800/40">₹42.5K</span>
+                        </a>
+
+                        <a href="/admin/paid-tenants" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                <span>Settled Receipts</span>
+                            </div>
+                            <span class="text-[10px] text-[#a0909c]">64 Paid</span>
+                        </a>
+
+                        <!-- Maintenance Requests -->
+                        <a href="/admin/maintenance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                <span>Maintenance Requests</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 font-bold px-2 py-0.5 rounded-full border border-red-500/30">5 Active</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="/admin/notifications" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                <span>Notifications</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500 text-white font-bold px-1.5 py-0.2 rounded-full">4</span>
+                        </a>
+
+                        <!-- More & Profile Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/more" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span>More & Profile</span>
+                                </div>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Edit Profile</span>
+                                    
+                                </a>
+                                <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
+                                    <span>↳ Logout Confirmation</span>
+                                    
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Fixed Bottom Bar -->
+        <div class="p-4 border-t border-[#3d1630] bg-[#14070f]/95 flex-shrink-0">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-[#e2b842]/20 text-[#f1d278] flex items-center justify-center font-bold text-sm border border-[#e2b842]/30">AM</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-[#faf6f0] truncate">Alex Morgan</p>
+                    <p class="text-[10px] text-[#a0909c] truncate">Super Admin • Sunrise</p>
+                </div>
+                <a href="/admin/logout-confirmation" class="text-[#a0909c] hover:text-red-400 p-1.5 transition" title="Logout">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                </a>
+            </div>
+            <p class="text-[10px] text-[#6e5d68] text-center">TAAMARA HavenHostel v2.4.1</p>
+        </div>
+    </aside>
+
+    <!-- MAIN DESKTOP CONTENT WRAPPER -->
+    <div class="lg:pl-64 flex flex-col min-h-screen">
+        
+        <!-- TOP HEADER BAR -->
+        <header class="h-16 bg-white border-b border-slate-200 px-6 lg:px-8 flex items-center justify-between sticky top-0 z-30">
+            <div class="flex items-center gap-3">
+                <a href="/" class="lg:hidden w-8 h-8 rounded-lg bg-amber-600 flex items-center justify-center text-white font-serif font-black text-sm">T</a>
+                <div>
+                    <h2 class="text-base font-bold text-slate-900 leading-tight">Rooms & Sharing Configurations</h2>
+                    <p class="text-[11px] text-slate-500 font-medium">75 Total Beds • 68 Occupied (91%) • 7 Beds Available</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="/admin/add-room" class="bg-[#14070f] hover:bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-sm transition">
+                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    <span>+ Add Room</span>
+                </a>
+                <a href="/admin/assign-bed" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-sm transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    <span>Assign Bed</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- MAIN ROOM MATRIX CONTENT -->
+        <main class="flex-1 p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
+            
+            <!-- Quick Sharing Tiers Overview -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm">
+                    <span class="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">1-Sharing</span>
+                    <p class="text-lg font-extrabold text-slate-900 mt-2">₹18,000</p>
+                    <p class="text-[11px] text-slate-500">1 Bed Free</p>
+                </div>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm">
+                    <span class="text-[10px] font-bold text-[#c59b27] bg-[#e2b842]/15 px-2 py-0.5 rounded">2-Sharing</span>
+                    <p class="text-lg font-extrabold text-slate-900 mt-2">₹12,000</p>
+                    <p class="text-[11px] text-slate-500">1 Bed Free (Room 102)</p>
+                </div>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm">
+                    <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">3-Sharing</span>
+                    <p class="text-lg font-extrabold text-slate-900 mt-2">₹9,000</p>
+                    <p class="text-[11px] text-slate-500">2 Beds Free</p>
+                </div>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm">
+                    <span class="text-[10px] font-bold text-purple-800 bg-purple-100 px-2 py-0.5 rounded">4-Sharing</span>
+                    <p class="text-lg font-extrabold text-slate-900 mt-2">₹7,200</p>
+                    <p class="text-[11px] text-slate-500">1 Bed Free</p>
+                </div>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm col-span-2 md:col-span-1">
+                    <span class="text-[10px] font-bold text-orange-800 bg-orange-100 px-2 py-0.5 rounded">5-Sharing</span>
+                    <p class="text-lg font-extrabold text-slate-900 mt-2">₹6,200</p>
+                    <p class="text-[11px] text-slate-500">2 Beds Free</p>
+                </div>
+            </div>
+
+            <!-- Floor Navigation Selector (Mockup Subscreen Entry Point) -->
+            <div class="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-[#14070f]"></span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">Floor-by-Floor Navigation</h3>
+                    </div>
+                    <a href="/admin/floor-rooms" class="text-xs font-bold text-[#c59b27] hover:text-[#c59b27] flex items-center gap-1 transition">
+                        <span>Open Subscreen Full View</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                    <button class="bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm">
+                        All Floors (4 Floors)
+                    </button>
+                    <a href="/admin/floor-rooms" class="bg-[#fdfbf7] border-2 border-[#c59b27] text-[#c59b27] hover:bg-[#e2b842]/15 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm flex items-center gap-1.5 transition">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                        <span>Floor 1 — Ground Level</span>
+                        <span class="bg-[#14070f] text-white text-[10px] px-2 py-0.5 rounded-full ml-1 font-extrabold">14 Rooms • 2 Vacancies</span>
+                    </a>
+                    <a href="/admin/rooms/floor-2" class="bg-indigo-50 border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-100 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm flex items-center gap-1.5 transition">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span>Floor 2 — Premium Wing</span>
+                        <span class="bg-indigo-600 text-white text-[10px] px-2 py-0.5 rounded-full ml-1 font-extrabold">16 Rooms • 5 Vacancies</span>
+                    </a>
+                    <a href="/admin/rooms/floor-3" class="bg-teal-50 border-2 border-teal-600 text-teal-800 hover:bg-teal-100 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm flex items-center gap-1.5 transition">
+                        <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                        <span>Floor 3 — Penthouse Wing</span>
+                        <span class="bg-teal-600 text-white text-[10px] px-2 py-0.5 rounded-full ml-1 font-extrabold">12 Rooms • 7 Vacancies</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Floor 1, Floor 2 & Floor 3 Navigation Subscreen 3-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Floor 1 Subscreen Card -->
+                <div class="bg-gradient-to-br from-[#14070f] via-slate-900 to-[#14070f] rounded-3xl p-5 text-white shadow-md flex flex-col justify-between border border-[#3d1630]">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-[#e2b842] text-slate-950 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md">Subscreen 1</span>
+                            <span class="text-xs text-[#f1d278] font-bold">86% Occupancy</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Floor 1 — Ground Level</h3>
+                        <p class="text-xs text-slate-300 mt-1">14 Rooms • 2 Vacancies • Standard Double, 4-Bed Dorm, Private Deluxe & Maintenance Tracking</p>
+                    </div>
+                    <div class="pt-4 mt-2 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">28 Bed Slots</span>
+                        <a href="/admin/floor-rooms" class="bg-[#14070f] hover:bg-[#e2b842] text-white text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1 shadow transition text-[11px]">
+                            <span>Open Floor 1</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Floor 2 Subscreen Card -->
+                <div class="bg-gradient-to-br from-[#0F172A] via-indigo-950 to-slate-900 rounded-3xl p-5 text-white shadow-md flex flex-col justify-between border border-indigo-800/40">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-indigo-500 text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md">Subscreen 2</span>
+                            <span class="text-xs text-emerald-400 font-bold">5 Available</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Floor 2 — Premium Wing</h3>
+                        <p class="text-xs text-slate-300 mt-1">16 Rooms • 5 Vacancies • 3-Bed Deluxe, Double Suite, Single Suite & Due Overdue Alerts</p>
+                    </div>
+                    <div class="pt-4 mt-2 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">32 Bed Slots</span>
+                        <a href="/admin/rooms/floor-2" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1 shadow transition text-[11px]">
+                            <span>Open Floor 2</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Floor 3 Subscreen Card (NEW) -->
+                <div class="bg-gradient-to-br from-[#042f2e] via-slate-900 to-teal-950 rounded-3xl p-5 text-white shadow-md flex flex-col justify-between border border-teal-800/40">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-teal-500 text-slate-950 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md">Subscreen 3</span>
+                            <span class="text-xs text-teal-300 font-bold">7 Available</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Floor 3 — Penthouse Wing</h3>
+                        <p class="text-xs text-slate-300 mt-1">12 Rooms • 7 Vacancies • AC Split, Ensuite Bath, Balconies, Studio Suites & Keycard System</p>
+                    </div>
+                    <div class="pt-4 mt-2 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">22 Bed Slots • 68% Occ</span>
+                        <a href="/admin/rooms/floor-3" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1 shadow transition text-[11px]">
+                            <span>Open Floor 3</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sharing Tier Filter Chips Row -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                <button class="bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm">
+                    All Sharing Tiers (28 Rooms)
+                </button>
+                <button class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+                    1-Sharing (₹18,000)
+                </button>
+                <button class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+                    2-Sharing (₹12,000)
+                </button>
+                <button class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+                    3-Sharing (₹9,000)
+                </button>
+                <button class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+                    4-Sharing (₹7,200)
+                </button>
+                <button class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+                    5-Sharing (₹6,200)
+                </button>
+            </div>
+
+            <!-- DESKTOP ROOM CARDS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- ROOM 102 (2-SHARING) - With Vacant Bed B and Assign Action -->
+                <div class="bg-white rounded-3xl p-6 border-2 border-amber-500/30 shadow-md relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-xl font-extrabold text-slate-900">Room 102</h3>
+                                    <a href="/admin/floor-rooms" class="bg-[#e2b842]/15 hover:bg-[#ede4d5] text-[#c59b27] text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 transition">
+                                        <span>1st Floor</span>
+                                        <span class="text-[#c59b27]">↗</span>
+                                    </a>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">2-Sharing Twin Suite • ₹12,000/bed</p>
+                            </div>
+                            <span class="bg-emerald-50 text-emerald-700 text-xs font-extrabold px-2.5 py-1 rounded-full border border-emerald-200">
+                                1 Bed Free
+                            </span>
+                        </div>
+
+                        <!-- Amenities -->
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Attached Washroom</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">2 Work Tables</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">2 Wardrobes</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Balcony</span>
+                        </div>
+
+                        <!-- Bed Slots -->
+                        <div class="space-y-2.5 mb-4">
+                            <!-- Bed A: Occupied -->
+                            <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-[#e2b842]/15 text-[#c59b27] font-bold flex items-center justify-center text-xs">RS</div>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-900">Bed A: Rahul Sharma</p>
+                                        <p class="text-[10px] text-slate-400">TCS WaveRock • Paid (Oct)</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">Occupied</span>
+                            </div>
+
+                            <!-- Bed B: Available / Actionable -->
+                            <div class="p-3 rounded-2xl bg-emerald-50/60 border border-emerald-200 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">B</div>
+                                    <div>
+                                        <p class="text-xs font-bold text-emerald-900">Bed B: Ready for Allotment</p>
+                                        <p class="text-[10px] text-emerald-700">Reserved for Ankita Roy (2 PM)</p>
+                                    </div>
+                                </div>
+                                <button id="assignBedBtn" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm transition">
+                                    Assign Bed
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span>Includes 3 Meals & WiFi</span>
+                        <a href="/admin/assign-bed" class="text-amber-700 font-bold hover:underline">Allotment View →</a>
+                    </div>
+                </div>
+
+                <!-- ROOM 101 (1-SHARING) - Private Room -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-xl font-extrabold text-slate-900">Room 101</h3>
+                                    <a href="/admin/floor-rooms" class="bg-[#e2b842]/15 hover:bg-[#ede4d5] text-[#c59b27] text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 transition">
+                                        <span>1st Floor</span>
+                                        <span class="text-[#c59b27]">↗</span>
+                                    </a>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">1-Sharing Private Room • ₹18,000/mo</p>
+                            </div>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2.5 py-1 rounded-full">
+                                Full (1/1)
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Attached Bath</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Executive Desk</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Big Wardrobe</span>
+                        </div>
+
+                        <div class="space-y-2.5 mb-4">
+                            <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-xs">AR</div>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-900">Bed A: Ananya Reddy</p>
+                                        <p class="text-[10px] text-slate-400">Microsoft Hyd • Paid (Oct)</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">Occupied</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span>Private Room</span>
+                        <span class="text-emerald-600 font-bold">100% Full</span>
+                    </div>
+                </div>
+
+                <!-- ROOM 204 (3-SHARING) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-xl font-extrabold text-slate-900">Room 204</h3>
+                                    <a href="/admin/rooms/floor-2" class="bg-indigo-100 hover:bg-indigo-200 text-indigo-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 transition">
+                                        <span>2nd Floor</span>
+                                        <span class="text-indigo-600">↗</span>
+                                    </a>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">3-Sharing Balanced • ₹9,000/bed</p>
+                            </div>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2.5 py-1 rounded-full">
+                                Full (3/3)
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Attached Bath</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">3 Study Desks</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">3 Wardrobes</span>
+                        </div>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="p-2.5 rounded-xl bg-red-50/60 border border-red-200 flex items-center justify-between text-xs">
+                                <div>
+                                    <p class="font-bold text-slate-900">Bed A: Karthik Varma</p>
+                                    <p class="text-[10px] text-red-600 font-semibold">Overdue ₹9,500</p>
+                                </div>
+                                <a href="/admin/collect-due" class="text-xs font-bold text-red-700 bg-white px-2 py-0.5 rounded border border-red-200">Collect</a>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <div>
+                                    <p class="font-bold text-slate-900">Bed B: Vikramaditya Rao</p>
+                                    <p class="text-[10px] text-slate-400">Due Today</p>
+                                </div>
+                                <span class="text-[10px] text-slate-500">Paid</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <div>
+                                    <p class="font-bold text-slate-900">Bed C: Rohan Mehta</p>
+                                    <p class="text-[10px] text-slate-400">Wipro Circle</p>
+                                </div>
+                                <span class="text-[10px] text-slate-500">Paid</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span>Balanced Triple Share</span>
+                        <span class="text-emerald-600 font-bold">100% Full</span>
+                    </div>
+                </div>
+
+                <!-- ROOM 205 (4-SHARING) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-xl font-extrabold text-slate-900">Room 205</h3>
+                                    <a href="/admin/rooms/floor-2" class="bg-indigo-100 hover:bg-indigo-200 text-indigo-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 transition">
+                                        <span>2nd Floor</span>
+                                        <span class="text-indigo-600">↗</span>
+                                    </a>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">4-Sharing Community • ₹7,200/bed</p>
+                            </div>
+                            <span class="bg-emerald-50 text-emerald-700 text-xs font-extrabold px-2.5 py-1 rounded-full border border-emerald-200">
+                                1 Bed Free
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">4 Wardrobes</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Study Tables</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Cross Ventilation</span>
+                        </div>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-slate-900">Bed A: Priya Nair</p>
+                                <span class="text-[10px] text-emerald-600 font-bold">Paid</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-emerald-800">Bed B: Vacant Ready</p>
+                                <a href="/admin/assign-bed" class="bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">Assign</a>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-slate-900">Bed C: Divya Sen</p>
+                                <span class="text-[10px] text-emerald-600 font-bold">Paid</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-slate-900">Bed D: Swati Mishra</p>
+                                <span class="text-[10px] text-emerald-600 font-bold">Paid</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span>Community Suite</span>
+                        <span class="text-amber-600 font-bold">3/4 Beds</span>
+                    </div>
+                </div>
+
+                <!-- ROOM 301 (5-SHARING) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-xl font-extrabold text-slate-900">Room 301</h3>
+                                    <a href="/admin/rooms/floor-3" class="bg-teal-100 hover:bg-teal-200 text-teal-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 transition">
+                                        <span>3rd Floor</span>
+                                        <span class="text-teal-600">↗</span>
+                                    </a>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">5-Sharing Social Suite • ₹6,200/bed</p>
+                            </div>
+                            <span class="bg-emerald-50 text-emerald-700 text-xs font-extrabold px-2.5 py-1 rounded-full border border-emerald-200">
+                                2 Beds Free
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">5 Lockable Wardrobes</span>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded">Daily Housekeeping</span>
+                        </div>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-slate-900">Bed A: Suresh Reddy</p>
+                                <span class="text-[10px] text-amber-600 font-bold">2D Overdue</span>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-slate-900">Bed B: Amit Joshi</p>
+                                <span class="text-[10px] text-emerald-600 font-bold">Paid</span>
+                            </div>
+                            <div class="p-2 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-emerald-800">Bed C: Vacant Ready</p>
+                                <a href="/admin/assign-bed" class="bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">Assign</a>
+                            </div>
+                            <div class="p-2 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-emerald-800">Bed D: Vacant Ready</p>
+                                <a href="/admin/assign-bed" class="bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">Assign</a>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                                <p class="font-bold text-slate-900">Bed E: Deepak Chawla</p>
+                                <span class="text-[10px] text-emerald-600 font-bold">Paid</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400">Penthouse Social Suite</span>
+                        <a href="/admin/room-details?id=301" class="text-[#c59b27] font-bold hover:underline flex items-center gap-1">
+                            <span>Room Details & Booking</span>
+                            <span class="text-xs">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ADD NEW ROOM CARD -->
+                <div onclick="window.location.href='/admin/add-room'" class="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-6 flex flex-col items-center justify-center text-center hover:bg-slate-100/60 transition cursor-pointer">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xl mb-3">
+                        +
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-900">Configure New Room</h4>
+                    <p class="text-xs text-slate-500 max-w-xs mt-1">Add additional room or bed capacity for Road No. 1A Nanakramguda property</p>
+                    <a href="/admin/add-room" class="mt-4 bg-slate-900 hover:bg-black text-white text-xs font-bold px-4 py-2 rounded-xl transition inline-block">
+                        Add Room Specs
+                    </a>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/sidebar-scroll.js"></script>
+    <script src="/js/rooms.js"></script>
+<!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#faf6f0]/95 backdrop-blur-md border-t border-[#ede4d5] z-40 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-[#6e5d68] shadow-lg">
+        <a href="/admin/dashboard" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="/admin/tenants" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span>Tenants</span>
+        </a>
+        <a href="/admin/rooms/floor-1" class="flex flex-col items-center gap-1 transition text-[#c59b27] font-bold">
+            <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <span>Rooms</span>
+        </a>
+        <a href="/admin/finance" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Finance</span>
+        </a>
+        <a href="/admin/more" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <span>More</span>
+        </a>
+    </nav>
+</body>
+</html>

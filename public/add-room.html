@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAAMARA CO-LIVE SPACES - Add New Room</title>
+        <!-- Google Fonts (Official TAAMARA Typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- TAAMARA Brand Design System & Themes -->
+    <link rel="stylesheet" href="/css/taamara-theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/taamara-theme.js"></script>
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .custom-scrollbar {
+            overflow-y: auto !important;
+            scrollbar-width: thin;
+            scrollbar-color: #475569 transparent;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            display: block !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-[#faf6f0] text-[#1a1016] min-h-screen">
+
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
+    <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
+        <!-- Sidebar Header / Branding (Fixed) -->
+        <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-xl shadow-md shadow-[#e2b842]/20">
+                    T
+                </div>
+                <div>
+                    <h1 class="text-base font-serif font-bold tracking-tight text-[#faf6f0] leading-tight">TAAMARA CO-LIVE</h1>
+                    <p class="text-[10px] text-[#e2b842] font-bold uppercase tracking-wider">Nanakramguda, Hyd</p>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between bg-[#1f0a18] border border-[#3d1630] px-3 py-2 rounded-xl text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-[#ede4d5] font-medium text-[11px]">Biometric Gate Live</span>
+                </div>
+                <a href="/" target="_blank" class="text-[#e2b842] hover:text-[#f1d278] text-[11px] font-bold">Website ↗</a>
+            </div>
+        </div>
+
+        <!-- Scrollable Navigation Links -->
+        <div id="sidebarScrollArea" class="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+            <nav class="p-4 space-y-6 text-xs">
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Management</p>
+                    <div class="space-y-1">
+                        <!-- Dashboard Overview -->
+                        <a href="/admin/dashboard" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            <span>Dashboard Overview</span>
+                        </a>
+
+                        <!-- Residents Directory -->
+                        <a href="/admin/residents" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                <span>Residents Directory</span>
+                            </div>
+                            <span class="bg-[#2a0e21] text-[#ede4d5] text-[10px] px-2 py-0.5 rounded-md font-semibold border border-[#3d1630]">68</span>
+                        </a>
+
+                        <!-- Rooms & Sharing Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition bg-[#e2b842]/15 text-[#f1d278] border border-[#e2b842]/30 font-bold shadow-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                    <span>Rooms & Sharing</span>
+                                </div>
+                                <span class="bg-emerald-950/80 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md font-bold border border-emerald-800/40">7 Beds Free</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
+                                </a>
+                                <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
+                                </a>
+                                <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
+                                </a>
+                                <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#f1d278] bg-[#2a0e21] font-bold">
+                                    <span>+ Add New Room</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Finance & Ledger Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/finance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Finance & Ledger</span>
+                                </div>
+                                <span class="bg-[#2a0e21] text-[#e2b842] text-[10px] px-2 py-0.5 rounded-md font-bold border border-[#3d1630]">₹6.85L</span>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Record Entry</span>
+                                </a>
+                                <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Expenses Ledger</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Operations</p>
+                    <div class="space-y-1">
+                        <a href="/admin/assign-bed" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>Assign Bed (Check-In)</span>
+                        </a>
+
+                        <a href="/admin/new-checkins" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                                <span>New Check-ins</span>
+                            </div>
+                            <span class="text-[10px] bg-[#2a0e21] text-[#f1d278] font-bold px-2 py-0.5 rounded border border-[#3d1630]">3 Pending</span>
+                        </a>
+
+                        <a href="/admin/pending-dues" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span>Pending Dues</span>
+                            </div>
+                            <span class="bg-red-950/80 text-red-300 text-[10px] px-2 py-0.5 rounded-md font-bold border border-red-800/40">₹42.5K</span>
+                        </a>
+
+                        <a href="/admin/paid-tenants" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                <span>Settled Receipts</span>
+                            </div>
+                            <span class="text-[10px] text-[#a0909c]">64 Paid</span>
+                        </a>
+
+                        <!-- Maintenance Requests -->
+                        <a href="/admin/maintenance" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                <span>Maintenance Requests</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 font-bold px-2 py-0.5 rounded-full border border-red-500/30">5 Active</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="/admin/notifications" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                <span>Notifications</span>
+                            </div>
+                            <span class="text-[10px] bg-red-500 text-white font-bold px-1.5 py-0.2 rounded-full">4</span>
+                        </a>
+
+                        <!-- More & Profile Group -->
+                        <div class="space-y-1">
+                            <a href="/admin/more" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium transition text-[#beb5a7] hover:bg-[#1f0a18] hover:text-[#faf6f0]">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 text-[#a0909c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span>More & Profile</span>
+                                </div>
+                            </a>
+                            <div class="pl-7 pr-2 py-1 space-y-1">
+                                <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
+                                    <span>↳ Edit Profile</span>
+                                    
+                                </a>
+                                <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
+                                    <span>↳ Logout Confirmation</span>
+                                    
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Fixed Bottom Bar -->
+        <div class="p-4 border-t border-[#3d1630] bg-[#14070f]/95 flex-shrink-0">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-[#e2b842]/20 text-[#f1d278] flex items-center justify-center font-bold text-sm border border-[#e2b842]/30">AM</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-[#faf6f0] truncate">Alex Morgan</p>
+                    <p class="text-[10px] text-[#a0909c] truncate">Super Admin • Sunrise</p>
+                </div>
+                <a href="/admin/logout-confirmation" class="text-[#a0909c] hover:text-red-400 p-1.5 transition" title="Logout">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                </a>
+            </div>
+            <p class="text-[10px] text-[#6e5d68] text-center">TAAMARA HavenHostel v2.4.1</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="lg:pl-64 flex flex-col min-h-screen pb-20 lg:pb-10">
+        
+        <!-- DESKTOP TOP BAR (Visible on lg screens) -->
+        <header class="hidden lg:flex h-16 bg-white border-b border-slate-200 px-6 lg:px-8 items-center justify-between sticky top-0 z-30">
+            <div class="flex items-center gap-3">
+                <a href="/admin/rooms" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </a>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h2 class="text-base font-bold text-slate-900 leading-tight">Add New Room</h2>
+                        <span class="text-[10px] bg-[#e2b842]/15 text-[#c59b27] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Room Intake</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 font-medium">TAAMARA CO-LIVE SPACES • Register room specifications and bed allotments</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="/admin/rooms" class="text-xs font-bold text-slate-600 hover:text-slate-900 bg-slate-100 px-3.5 py-2 rounded-xl transition">
+                    Cancel & Return
+                </a>
+            </div>
+        </header>
+
+        <!-- MOBILE TOP BAR (Matches Mockup) -->
+        <div class="lg:hidden bg-white border-b border-slate-200 px-4 py-3 sticky top-0 z-30 flex items-center justify-between">
+            <div>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-extrabold text-slate-900 font-serif">HavenHostel</span>
+                    <span class="text-[10px] text-amber-600 font-bold bg-amber-50 px-1.5 py-0.5 rounded">TAAMARA</span>
+                </div>
+                <p class="text-[10px] text-slate-400 font-medium -mt-0.5">Rooms Intake Subscreen</p>
+            </div>
+            <a href="/admin/notifications" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 relative">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+            </a>
+        </div>
+
+        <!-- MAIN FORM CONTAINER -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-2xl w-full mx-auto space-y-5">
+
+            <!-- SUB-HEADER BAR (Back button + Pill + Title as shown in Mockup) -->
+            <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                    <a href="javascript:history.back()" class="w-9 h-9 rounded-2xl bg-[#fdfbf7] hover:bg-[#e2b842]/15 text-[#c59b27] flex items-center justify-center transition shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    </a>
+                    <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#c59b27] bg-[#e2b842]/15 px-3 py-1 rounded-full uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-[#14070f] animate-pulse"></span>
+                        ROOM INTAKE
+                    </span>
+                </div>
+
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight font-serif">Add New Room</h1>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Register room specifications and bed allotments</p>
+                </div>
+            </div>
+
+            <!-- STEP 1: BASIC ROOM INFO -->
+            <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm space-y-4">
+                <!-- Card Header -->
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">Basic Room Info</h3>
+                    </div>
+                    <span class="text-xs font-semibold text-[#c59b27] bg-[#fdfbf7] px-2.5 py-1 rounded-full">Step 1 of 4</span>
+                </div>
+
+                <!-- Room Number / Code -->
+                <div>
+                    <label class="text-xs font-bold text-slate-700 block mb-1.5">Room Number / Code</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 font-bold text-sm">#</span>
+                        <input id="roomNumberInput" type="text" value="Room 206" class="w-full pl-8 pr-4 py-2.5 bg-slate-50/70 border border-slate-200 rounded-xl text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#e2b842] focus:bg-white transition" placeholder="e.g. Room 206">
+                    </div>
+                </div>
+
+                <!-- Floor Level Pills -->
+                <div>
+                    <label class="text-xs font-bold text-slate-700 block mb-1.5">Floor Level</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="floorLevelPills">
+                        <button type="button" onclick="selectFloor(1)" id="floorPill1" class="floor-pill py-2 px-3 rounded-xl text-xs font-semibold border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 text-center transition">
+                            Floor 1
+                        </button>
+                        <button type="button" onclick="selectFloor(2)" id="floorPill2" class="floor-pill py-2 px-3 rounded-xl text-xs font-bold bg-[#14070f] text-white text-center shadow-sm transition">
+                            Floor 2
+                        </button>
+                        <button type="button" onclick="selectFloor(3)" id="floorPill3" class="floor-pill py-2 px-3 rounded-xl text-xs font-semibold border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 text-center transition">
+                            Floor 3
+                        </button>
+                        <button type="button" onclick="selectFloor(4)" id="floorPill4" class="floor-pill py-2 px-3 rounded-xl text-xs font-semibold border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 text-center transition">
+                            Rooftop Wing
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Room Category -->
+                <div>
+                    <label class="text-xs font-bold text-slate-700 block mb-1.5">Room Category</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        </span>
+                        <select id="roomCategorySelect" onchange="updateCategoryDetails()" class="w-full pl-9 pr-9 py-2.5 bg-slate-50/70 border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#e2b842] focus:bg-white appearance-none transition">
+                            <option value="1">1-Bed Private Suite (₹18,000 / mo)</option>
+                            <option value="2">2-Bed Premium Dorm (₹12,000 / mo)</option>
+                            <option value="3" selected>3-Bed Deluxe Dorm (₹9,000 / mo)</option>
+                            <option value="4">4-Bed Community Dorm (₹7,200 / mo)</option>
+                            <option value="5">5-Bed Social Suite (₹6,200 / mo)</option>
+                        </select>
+                        <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: BED INVENTORY & CAPACITY -->
+            <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm space-y-4">
+                <!-- Card Header -->
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">Bed Inventory & Capacity</h3>
+                    </div>
+                    <span class="text-xs font-semibold text-[#c59b27] bg-[#fdfbf7] px-2.5 py-1 rounded-full">Step 2 of 4</span>
+                </div>
+
+                <!-- Total Bed Capacity Stepper Card -->
+                <div class="bg-[#fdfbf7] border border-[#ede4d5] rounded-2xl p-4 flex items-center justify-between">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Total Bed Capacity</h4>
+                        <p class="text-[11px] text-slate-500">Allocated dorm slots</p>
+                    </div>
+
+                    <!-- Stepper -->
+                    <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl p-1 shadow-sm">
+                        <button type="button" onclick="decrementBeds()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-base transition">
+                            -
+                        </button>
+                        <span id="bedCountDisplay" class="text-xs sm:text-sm font-extrabold text-slate-900 px-3 whitespace-nowrap">
+                            3 Beds
+                        </span>
+                        <button type="button" onclick="incrementBeds()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-base transition">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Configured Beds List -->
+                <div class="space-y-2.5">
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="font-bold text-slate-800">Configured Beds</span>
+                        <span class="text-[11px] font-medium text-slate-400">Auto-Assigned Slots</span>
+                    </div>
+
+                    <div id="configuredBedsContainer" class="space-y-2">
+                        <!-- Bed A -->
+                        <div class="flex items-center justify-between p-3 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] hover:bg-[#fdfbf7] transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-[#e2b842]/15 text-[#c59b27] font-extrabold text-sm flex items-center justify-center">
+                                    A
+                                </div>
+                                <div>
+                                    <h5 class="text-xs sm:text-sm font-bold text-slate-900" id="labelBedA">Bed 206-A</h5>
+                                    <p class="text-[11px] text-slate-500">Lower Bunk / Single</p>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-bold text-[#c59b27] bg-white border border-[#ede4d5] px-2.5 py-0.5 rounded-full shadow-2xs">
+                                Tier 1
+                            </span>
+                        </div>
+
+                        <!-- Bed B -->
+                        <div class="flex items-center justify-between p-3 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] hover:bg-[#fdfbf7] transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-[#e2b842]/15 text-[#c59b27] font-extrabold text-sm flex items-center justify-center">
+                                    B
+                                </div>
+                                <div>
+                                    <h5 class="text-xs sm:text-sm font-bold text-slate-900" id="labelBedB">Bed 206-B</h5>
+                                    <p class="text-[11px] text-slate-500">Upper Bunk</p>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-bold text-[#c59b27] bg-white border border-[#ede4d5] px-2.5 py-0.5 rounded-full shadow-2xs">
+                                Tier 2
+                            </span>
+                        </div>
+
+                        <!-- Bed C -->
+                        <div class="flex items-center justify-between p-3 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] hover:bg-[#fdfbf7] transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-[#e2b842]/15 text-[#c59b27] font-extrabold text-sm flex items-center justify-center">
+                                    C
+                                </div>
+                                <div>
+                                    <h5 class="text-xs sm:text-sm font-bold text-slate-900" id="labelBedC">Bed 206-C</h5>
+                                    <p class="text-[11px] text-slate-500">Lower Bunk</p>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-bold text-[#c59b27] bg-white border border-[#ede4d5] px-2.5 py-0.5 rounded-full shadow-2xs">
+                                Tier 1
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rent & Deposit Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    <div>
+                        <label class="text-xs font-bold text-slate-700 block mb-1.5">Rent / Bed</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 font-bold text-xs sm:text-sm">₹</span>
+                            <input id="rentInput" type="text" value="9,000 / month" class="w-full pl-8 pr-3 py-2.5 bg-[#fdfbf7] border border-[#ede4d5] rounded-xl text-xs sm:text-sm font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#e2b842] focus:bg-white transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-slate-700 block mb-1.5">Deposit / Bed</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 font-bold text-xs sm:text-sm">₹</span>
+                            <input id="depositInput" type="text" value="15,000" class="w-full pl-8 pr-3 py-2.5 bg-[#fdfbf7] border border-[#ede4d5] rounded-xl text-xs sm:text-sm font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#e2b842] focus:bg-white transition">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: ROOM AMENITIES -->
+            <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm space-y-4">
+                <!-- Card Header -->
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">Room Amenities</h3>
+                    </div>
+                    <span class="text-xs font-semibold text-[#c59b27] bg-[#fdfbf7] px-2.5 py-1 rounded-full">Step 3 of 4</span>
+                </div>
+
+                <!-- Amenity Pills (Interactive toggle) -->
+                <div class="flex flex-wrap gap-2 pt-1" id="amenitiesGrid">
+                    <!-- Selected Chips (Vibrant Blue as in Mockup) -->
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#14070f] text-white shadow-sm transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span>Air Conditioning (Split)</span>
+                    </button>
+
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#14070f] text-white shadow-sm transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+                        <span>High-Speed Wi-Fi</span>
+                    </button>
+
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#14070f] text-white shadow-sm transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                        <span>Ensuite Bathroom</span>
+                    </button>
+
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#14070f] text-white shadow-sm transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        <span>Keycard RFID Lock</span>
+                    </button>
+
+                    <!-- Unselected Chips (Soft Slate as in Mockup) -->
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <span>Balcony View</span>
+                    </button>
+
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <span>Study Desk</span>
+                    </button>
+
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        <span>Mini Fridge</span>
+                    </button>
+
+                    <button type="button" onclick="toggleAmenity(this)" class="amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        <span>Personal Locker</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 4: OPERATIONAL STATUS -->
+            <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm space-y-4">
+                <!-- Card Header -->
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-[#fdfbf7] text-[#c59b27] flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">Operational Status</h3>
+                    </div>
+                    <span class="text-xs font-semibold text-[#c59b27] bg-[#fdfbf7] px-2.5 py-1 rounded-full">Step 4 of 4</span>
+                </div>
+
+                <!-- Status Options (Custom Radio Cards) -->
+                <div class="space-y-3">
+                    <!-- Option 1: Ready for Immediate Booking (Active default) -->
+                    <label id="statusOption1" onclick="selectStatus(1)" class="cursor-pointer block border-2 border-[#e2b842] bg-[#fdfbf7] p-4 rounded-2xl transition">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-0.5 w-5 h-5 rounded-full border-2 border-[#c59b27] flex items-center justify-center flex-shrink-0 bg-white">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#14070f]" id="radioDot1"></span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900">Ready for Immediate Booking</h4>
+                                    <span class="w-2 h-2 rounded-full bg-[#14070f]"></span>
+                                </div>
+                                <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Makes all configured beds bookable right away on hostel portals.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- Option 2: Under Furnishing / Maintenance -->
+                    <label id="statusOption2" onclick="selectStatus(2)" class="cursor-pointer block border border-slate-200 bg-white hover:bg-slate-50 p-4 rounded-2xl transition">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-0.5 w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center flex-shrink-0 bg-white">
+                                <span class="w-2.5 h-2.5 rounded-full bg-transparent" id="radioDot2"></span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900">Under Furnishing / Maintenance</h4>
+                                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                </div>
+                                <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Holds the inventory in staging; beds stay unlisted for public intake.</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- ACTION BUTTONS (Matches Mockup) -->
+            <div class="pt-2 space-y-3">
+                <button type="button" onclick="handleSaveAndPublish()" class="w-full bg-[#14070f] hover:bg-slate-900 active:scale-[0.99] text-white text-sm font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    <span>Save & Publish Room</span>
+                </button>
+
+                <button type="button" onclick="handleSaveDraft()" class="w-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-sm font-semibold py-3 px-6 rounded-2xl flex items-center justify-center gap-2 shadow-xs transition">
+                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Save as Draft</span>
+                </button>
+            </div>
+
+        </main>
+
+        <!-- MOBILE BOTTOM NAVIGATION (Matches Mockup Exactly) -->
+        <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#faf6f0]/95 backdrop-blur-md border-t border-[#ede4d5] z-40 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-[#6e5d68] shadow-lg">
+        <a href="/admin/dashboard" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="/admin/tenants" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span>Tenants</span>
+        </a>
+        <a href="/admin/rooms/floor-1" class="flex flex-col items-center gap-1 transition text-[#c59b27] font-bold">
+            <svg class="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <span>Rooms</span>
+        </a>
+        <a href="/admin/finance" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Finance</span>
+        </a>
+        <a href="/admin/more" class="flex flex-col items-center gap-1 transition hover:text-[#1a1016]">
+            <svg class="w-5 h-5 text-[#6e5d68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <span>More</span>
+        </a>
+    </nav>
+
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastSuccess" class="fixed top-6 right-6 z-50 transform translate-y-[-120%] opacity-0 transition-all duration-300 pointer-events-none max-w-sm w-full bg-slate-900 text-white rounded-2xl p-4 shadow-2xl border border-slate-700 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div>
+            <h4 class="text-sm font-bold text-white" id="toastTitle">Room Created Successfully</h4>
+            <p class="text-xs text-slate-400" id="toastMsg">Room 206 registered with 3 beds.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/js/sidebar-scroll.js"></script>
+    <script>
+        let currentFloor = 2;
+        let bedCount = 3;
+        let selectedStatus = 1;
+
+        // Auto-detect floor from URL query (?floor=1, ?floor=2, ?floor=3)
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const floorParam = urlParams.get('floor');
+            if (floorParam && ['1', '2', '3', '4'].includes(floorParam)) {
+                selectFloor(parseInt(floorParam, 10));
+            }
+        });
+
+        function selectFloor(floorNum) {
+            currentFloor = floorNum;
+            for (let i = 1; i <= 4; i++) {
+                const pill = document.getElementById('floorPill' + i);
+                if (i === floorNum) {
+                    pill.className = 'floor-pill py-2 px-3 rounded-xl text-xs font-bold bg-[#14070f] text-white text-center shadow-sm transition';
+                } else {
+                    pill.className = 'floor-pill py-2 px-3 rounded-xl text-xs font-semibold border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 text-center transition';
+                }
+            }
+
+            // Update default room number placeholder & bed slots
+            const roomNumInput = document.getElementById('roomNumberInput');
+            if (floorNum === 1) roomNumInput.value = 'Room 106';
+            else if (floorNum === 2) roomNumInput.value = 'Room 206';
+            else if (floorNum === 3) roomNumInput.value = 'Room 306';
+            else if (floorNum === 4) roomNumInput.value = 'Penthouse 401';
+
+            renderBedSlots();
+        }
+
+        function updateCategoryDetails() {
+            const cat = document.getElementById('roomCategorySelect').value;
+            const rentInput = document.getElementById('rentInput');
+            
+            if (cat === '1') {
+                bedCount = 1;
+                rentInput.value = '18,000 / month';
+            } else if (cat === '2') {
+                bedCount = 2;
+                rentInput.value = '12,000 / month';
+            } else if (cat === '3') {
+                bedCount = 3;
+                rentInput.value = '9,000 / month';
+            } else if (cat === '4') {
+                bedCount = 4;
+                rentInput.value = '7,200 / month';
+            } else if (cat === '5') {
+                bedCount = 5;
+                rentInput.value = '6,200 / month';
+            }
+
+            document.getElementById('bedCountDisplay').textContent = `${bedCount} Bed${bedCount > 1 ? 's' : ''}`;
+            renderBedSlots();
+        }
+
+        function incrementBeds() {
+            if (bedCount < 8) {
+                bedCount++;
+                document.getElementById('bedCountDisplay').textContent = `${bedCount} Beds`;
+                renderBedSlots();
+            }
+        }
+
+        function decrementBeds() {
+            if (bedCount > 1) {
+                bedCount--;
+                document.getElementById('bedCountDisplay').textContent = `${bedCount} Bed${bedCount > 1 ? 's' : ''}`;
+                renderBedSlots();
+            }
+        }
+
+        function renderBedSlots() {
+            const container = document.getElementById('configuredBedsContainer');
+            const roomNum = document.getElementById('roomNumberInput').value.replace('Room ', '').trim() || '206';
+            container.innerHTML = '';
+
+            const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            for (let i = 0; i < bedCount; i++) {
+                const letter = letters[i];
+                const tier = (i % 2 === 0) ? 'Tier 1' : 'Tier 2';
+                const type = (i % 2 === 0) ? (bedCount === 1 ? 'Private Single Bed' : 'Lower Bunk / Single') : 'Upper Bunk';
+
+                const card = document.createElement('div');
+                card.className = 'flex items-center justify-between p-3 rounded-2xl bg-[#fdfbf7] border border-[#ede4d5] hover:bg-[#fdfbf7] transition';
+                card.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#e2b842]/15 text-[#c59b27] font-extrabold text-sm flex items-center justify-center">
+                            ${letter}
+                        </div>
+                        <div>
+                            <h5 class="text-xs sm:text-sm font-bold text-slate-900">Bed ${roomNum}-${letter}</h5>
+                            <p class="text-[11px] text-slate-500">${type}</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] font-bold text-[#c59b27] bg-white border border-[#ede4d5] px-2.5 py-0.5 rounded-full shadow-2xs">
+                        ${tier}
+                    </span>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function toggleAmenity(btn) {
+            const isSelected = btn.classList.contains('bg-[#14070f]');
+            if (isSelected) {
+                btn.className = 'amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
+            } else {
+                btn.className = 'amenity-chip flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#14070f] text-white shadow-sm transition';
+            }
+        }
+
+        function selectStatus(opt) {
+            selectedStatus = opt;
+            const opt1 = document.getElementById('statusOption1');
+            const opt2 = document.getElementById('statusOption2');
+            const dot1 = document.getElementById('radioDot1');
+            const dot2 = document.getElementById('radioDot2');
+
+            if (opt === 1) {
+                opt1.className = 'cursor-pointer block border-2 border-[#e2b842] bg-[#fdfbf7] p-4 rounded-2xl transition';
+                opt2.className = 'cursor-pointer block border border-slate-200 bg-white hover:bg-slate-50 p-4 rounded-2xl transition';
+                dot1.className = 'w-2.5 h-2.5 rounded-full bg-[#14070f]';
+                dot2.className = 'w-2.5 h-2.5 rounded-full bg-transparent';
+            } else {
+                opt1.className = 'cursor-pointer block border border-slate-200 bg-white hover:bg-slate-50 p-4 rounded-2xl transition';
+                opt2.className = 'cursor-pointer block border-2 border-[#e2b842] bg-[#fdfbf7] p-4 rounded-2xl transition';
+                dot1.className = 'w-2.5 h-2.5 rounded-full bg-transparent';
+                dot2.className = 'w-2.5 h-2.5 rounded-full bg-[#14070f]';
+            }
+        }
+
+        function showToast(title, msg, redirectUrl) {
+            const toast = document.getElementById('toastSuccess');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMsg').textContent = msg;
+
+            toast.classList.remove('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                if (redirectUrl) {
+                    window.location.href = redirectUrl;
+                } else {
+                    toast.classList.add('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                }
+            }, 1200);
+        }
+
+        function handleSaveAndPublish() {
+            const roomName = document.getElementById('roomNumberInput').value || 'Room 206';
+            const redirectFloor = currentFloor === 1 ? '/admin/rooms/floor-1' : (currentFloor === 3 ? '/admin/rooms/floor-3' : '/admin/rooms/floor-2');
+            showToast('Room Saved & Published!', `${roomName} with ${bedCount} beds is now live for allotment.`, redirectFloor);
+        }
+
+        function handleSaveDraft() {
+            const roomName = document.getElementById('roomNumberInput').value || 'Room 206';
+            showToast('Draft Saved', `${roomName} specifications saved to drafts.`, null);
+        }
+
+        // Keep bed card labels in sync when typing room number
+        document.getElementById('roomNumberInput').addEventListener('input', () => {
+            renderBedSlots();
+        });
+    </script>
+</body>
+</html>
