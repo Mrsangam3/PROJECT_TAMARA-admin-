@@ -32,7 +32,7 @@ function getUnifiedSidebar(activeKey, activeSubKey = null) {
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                     <span class="text-[#ede4d5] font-medium text-[11px]">Biometric Gate Live</span>
                 </div>
-                <a href="/" target="_blank" class="text-[#e2b842] hover:text-[#f1d278] text-[11px] font-bold">Website ↗</a>
+                <span class="text-[#e2b842] text-[10px] font-mono font-bold bg-[#2a0e21] px-2 py-0.5 rounded border border-[#3d1630]">Admin PMS</span>
             </div>
         </div>
 

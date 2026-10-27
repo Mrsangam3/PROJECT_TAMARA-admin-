@@ -6,38 +6,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json()); // To parse incoming JSON payloads
 
-// Public Home / Landing Page
+// Root Route: Dedicated Admin Portal Redirect
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Accurate TAAMARA CO-LIVE SPACES Data API
-app.get('/api/hostel-details', (req, res) => {
-    res.json({
-        name: "TAAMARA CO-LIVE SPACES",
-        tagline: "Premium Co-Living for Men & Women",
-        address: "Road Number 1A, Nanakramguda, Hyderabad, Telangana 500032, India",
-        landmark: "Financial District / Continental Hospitals",
-        phones: ["+91 7386647564", "+91 9848427564"],
-        whatsapp: "+91 7386647564",
-        maps: {
-            destination: "Road Number 1A, Nanakramguda, Hyderabad, Telangana, India",
-            embed: "https://www.google.com/maps?q=Road+Number+1A%2C+Nanakramguda%2C+Hyderabad%2C+Telangana&output=embed"
-        },
-        sharingOptions: [
-            { id: 1, title: "1 Sharing", subtitle: "A room of your own", rent: 18000, suitable: "Professionals who value privacy", features: ["Fully furnished room", "Dedicated study & work table", "Separate wardrobe", "3 times food", "High-speed WiFi"] },
-            { id: 2, title: "2 Sharing", subtitle: "Space for two", rent: 12000, suitable: "Professionals & students", features: ["Fully furnished room", "Dedicated study & work table", "Separate wardrobes", "3 times food", "Daily housekeeping"] },
-            { id: 3, title: "3 Sharing", subtitle: "The balanced choice", rent: 9000, suitable: "Working professionals & students", features: ["Fully furnished & ventilated", "Separate wardrobes", "3 times food", "High-speed WiFi", "Daily housekeeping"] },
-            { id: 4, title: "4 Sharing", subtitle: "Community living", rent: 7200, suitable: "Students & young professionals", features: ["Fully furnished & ventilated", "Separate wardrobes", "3 times food", "Power backup", "High-speed WiFi"] },
-            { id: 5, title: "5 Sharing", subtitle: "The social suite", rent: 6200, suitable: "Those who love company", features: ["Fully furnished & ventilated", "Separate wardrobes", "3 times food", "Daily housekeeping", "High-speed WiFi"] }
-        ],
-        amenities: [
-            "3 Times Food", "High Speed WiFi", "Biometric Entry", "24/7 Cameras",
-            "Study & Work Table", "Separate Wardrobes", "Power Backup", "Daily Housekeeping",
-            "Fully Furnished Rooms", "Fully Ventilated Rooms", "Washing Machines",
-            "Self Cooking", "Sitting Lounge", "Fridge & Water Dispenser"
-        ]
-    });
+    res.redirect('/admin/dashboard');
 });
 
 // Admin Login

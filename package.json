@@ -1,14 +1,14 @@
 {
-  "name": "taamara-colive-web-application",
+  "name": "taamara-admin-portal",
   "version": "1.0.0",
-  "description": "Complete Modern Web Application for TAAMARA CO-LIVE SPACES (Nanakramguda, Hyderabad) - Public Portal & Full Admin PMS",
+  "description": "TAAMARA CO-LIVE SPACES — Official Property Management System & Admin Portal (Nanakramguda, Hyderabad)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["hostel", "pg", "co-living", "nanakramguda", "hyderabad", "web-application"],
+  "keywords": ["admin-portal", "pms", "property-management", "hostel", "co-living", "taamara"],
   "author": "TAAMARA CO-LIVE SPACES",
   "license": "ISC",
   "type": "commonjs",
