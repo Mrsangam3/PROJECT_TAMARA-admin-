@@ -1,6 +1,6 @@
 {
   "name": "taamara-admin-portal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TAAMARA CO-LIVE SPACES — Official Property Management System & Admin Portal (Nanakramguda, Hyderabad)",
   "main": "server.js",
   "scripts": {
