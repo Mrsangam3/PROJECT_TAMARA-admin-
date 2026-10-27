@@ -47,6 +47,7 @@
     <!-- DESKTOP SIDEBAR -->
     <!-- DESKTOP SIDEBAR -->
     <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
     <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
         <!-- Sidebar Header / Branding (Fixed) -->
         <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
@@ -100,15 +101,15 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 1 (Ground)</span></span>
                                     <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
                                 </a>
                                 <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 2 (Premium)</span></span>
                                     <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
                                 </a>
                                 <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 3 (Penthouse)</span></span>
                                     <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
                                 </a>
                                 <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
@@ -128,10 +129,10 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Record Entry</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Record Entry</span></span>
                                 </a>
                                 <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Expenses Ledger</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Expenses Ledger</span></span>
                                 </a>
                             </div>
                         </div>
@@ -198,11 +199,11 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Edit Profile</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Edit Profile</span></span>
                                     
                                 </a>
                                 <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
-                                    <span>↳ Logout Confirmation</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Logout Confirmation</span></span>
                                     
                                 </a>
                             </div>
@@ -232,21 +233,21 @@
     <div class="lg:pl-64 flex flex-col min-h-screen">
         
         <!-- TOP HEADER BAR -->
-        <header class="h-16 bg-white border-b border-slate-200 px-6 lg:px-8 flex items-center justify-between sticky top-0 z-30">
+        <header class="min-h-[72px] py-3.5 bg-white border-b border-[#ede4d5] px-6 lg:px-8 flex items-center justify-between sticky top-0 z-30 shadow-2xs">
             <div class="flex items-center gap-3">
-                <a href="/" class="lg:hidden w-8 h-8 rounded-lg bg-amber-600 flex items-center justify-center text-white font-serif font-black text-sm">T</a>
+                <a href="/" class="lg:hidden w-8 h-8 rounded-lg bg-amber-600 flex items-center justify-center text-white font-serif font-black text-sm whitespace-nowrap flex-shrink-0">T</a>
                 <div>
-                    <h2 class="text-base font-bold text-slate-900 leading-tight">Residents Management</h2>
-                    <p class="text-[11px] text-slate-500 font-medium">68 Active Co-Living Residents • Road No. 1A Nanakramguda</p>
+                    <h2 class="text-base font-bold text-[#1a1016] leading-tight">Residents Management</h2>
+                    <p class="text-[11px] text-[#c59b27] font-medium">68 Active Co-Living Residents • Road No. 1A Nanakramguda</p>
                 </div>
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="/admin/assign-bed" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-sm transition">
+                <a href="/admin/assign-bed" class="bg-gradient-to-r from-[#e2b842] to-[#c59b27] hover:from-[#f1d278] hover:to-[#e2b842] text-[#14070f] text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-sm transition whitespace-nowrap flex-shrink-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
                     <span>+ New Resident</span>
                 </a>
-                <a href="/admin/collect-due" class="bg-slate-900 hover:bg-black text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-sm transition">
+                <a href="/admin/collect-due" class="bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] border border-[#3d1630] text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-sm transition whitespace-nowrap flex-shrink-0">
                     <span>Collect Payment</span>
                 </a>
             </div>
@@ -544,6 +545,7 @@
     <script src="/js/sidebar-scroll.js"></script>
     <script src="/js/tenants.js"></script>
 <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <!-- MOBILE BOTTOM NAVIGATION BAR -->

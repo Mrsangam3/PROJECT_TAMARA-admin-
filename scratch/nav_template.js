@@ -68,15 +68,15 @@ function getUnifiedSidebar(activeKey, activeSubKey = null) {
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'floor-1' ? 'text-[#f1d278] bg-[#2a0e21] font-bold' : 'text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]'}">
-                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 1 (Ground)</span></span>
                                     <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
                                 </a>
                                 <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'floor-2' ? 'text-[#f1d278] bg-[#2a0e21] font-bold' : 'text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]'}">
-                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 2 (Premium)</span></span>
                                     <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
                                 </a>
                                 <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'floor-3' ? 'text-[#f1d278] bg-[#2a0e21] font-bold' : 'text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]'}">
-                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 3 (Penthouse)</span></span>
                                     <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
                                 </a>
                                 <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'add-room' ? 'text-[#f1d278] bg-[#2a0e21] font-bold' : 'text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]'}">
@@ -96,10 +96,10 @@ function getUnifiedSidebar(activeKey, activeSubKey = null) {
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'record-entry' ? 'text-[#f1d278] bg-[#2a0e21] font-bold' : 'text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]'}">
-                                    <span>↳ Record Entry</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Record Entry</span></span>
                                 </a>
                                 <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'expenses' ? 'text-[#f1d278] bg-[#2a0e21] font-bold' : 'text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]'}">
-                                    <span>↳ Expenses Ledger</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Expenses Ledger</span></span>
                                 </a>
                             </div>
                         </div>
@@ -166,11 +166,11 @@ function getUnifiedSidebar(activeKey, activeSubKey = null) {
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'edit-profile' ? 'text-[#f1d278] bg-[#2a0e21] font-bold' : 'text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]'}">
-                                    <span>↳ Edit Profile</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Edit Profile</span></span>
                                     ${activeSubKey === 'edit-profile' ? '<span class="text-[8px] bg-[#e2b842] text-[#14070f] font-black px-1.5 py-0.2 rounded">Now</span>' : ''}
                                 </a>
                                 <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition ${activeSubKey === 'logout-confirmation' ? 'text-red-400 bg-red-950/40 font-bold border border-red-800/40' : 'text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]'}">
-                                    <span>↳ Logout Confirmation</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Logout Confirmation</span></span>
                                     ${activeSubKey === 'logout-confirmation' ? '<span class="text-[8px] bg-red-500 text-white font-black px-1.5 py-0.2 rounded">Now</span>' : ''}
                                 </a>
                             </div>

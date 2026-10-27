@@ -54,6 +54,7 @@
     <!-- DESKTOP SIDEBAR -->
     <!-- DESKTOP SIDEBAR -->
     <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
     <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
         <!-- Sidebar Header / Branding (Fixed) -->
         <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
@@ -107,15 +108,15 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 1 (Ground)</span></span>
                                     <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
                                 </a>
                                 <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 2 (Premium)</span></span>
                                     <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
                                 </a>
                                 <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 3 (Penthouse)</span></span>
                                     <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
                                 </a>
                                 <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
@@ -135,10 +136,10 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Record Entry</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Record Entry</span></span>
                                 </a>
                                 <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Expenses Ledger</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Expenses Ledger</span></span>
                                 </a>
                             </div>
                         </div>
@@ -205,11 +206,11 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Edit Profile</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Edit Profile</span></span>
                                     
                                 </a>
                                 <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
-                                    <span>↳ Logout Confirmation</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Logout Confirmation</span></span>
                                     
                                 </a>
                             </div>
@@ -239,19 +240,19 @@
     <div class="lg:pl-64 flex flex-col min-h-screen pb-24 lg:pb-12">
         
         <!-- DESKTOP TOP BAR -->
-        <header class="hidden lg:flex h-16 bg-white border-b border-slate-200 px-6 lg:px-8 items-center justify-between sticky top-0 z-30">
+        <header class="min-h-[72px] py-3.5 hidden lg:flex bg-white border-b border-[#ede4d5] px-6 lg:px-8 items-center justify-between sticky top-0 z-30 shadow-2xs">
             <div class="flex items-center gap-3">
-                <a href="/admin/dashboard" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition">
+                <a href="/admin/dashboard" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition whitespace-nowrap flex-shrink-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 </a>
                 <div>
-                    <h2 class="text-base font-bold text-slate-900 leading-tight">More & Profile Menu</h2>
-                    <p class="text-[11px] text-slate-500 font-medium">Property administration, team credentials & system settings</p>
+                    <h2 class="text-base font-bold text-[#1a1016] leading-tight">More & Profile Menu</h2>
+                    <p class="text-[11px] text-[#c59b27] font-medium">Property administration, team credentials & system settings</p>
                 </div>
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="/admin/notifications" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 relative hover:bg-slate-200 transition">
+                <a href="/admin/notifications" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 relative hover:bg-slate-200 transition whitespace-nowrap flex-shrink-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
                     <span class="absolute top-2 right-2 w-2 h-2 bg-red-600 rounded-full"></span>
                 </a>
@@ -477,6 +478,7 @@
 
         <!-- MOBILE BOTTOM NAVIGATION BAR (Matches Mockup with More Active) -->
         <!-- MOBILE BOTTOM NAVIGATION BAR -->
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <!-- MOBILE BOTTOM NAVIGATION BAR -->

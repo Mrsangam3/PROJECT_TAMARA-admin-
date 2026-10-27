@@ -53,6 +53,7 @@
 <body class="bg-[#faf6f0] text-[#1a1016] min-h-screen">
 
     <!-- DESKTOP SIDEBAR -->
+    <!-- DESKTOP SIDEBAR -->
     <aside id="desktopSidebar" class="fixed inset-y-0 left-0 w-64 bg-[#14070f] text-[#faf6f0] z-40 hidden lg:flex flex-col border-r border-[#3d1630] h-screen overflow-hidden">
         <!-- Sidebar Header / Branding (Fixed) -->
         <div class="p-6 border-b border-[#3d1630] flex-shrink-0">
@@ -80,7 +81,7 @@
                 <div>
                     <p class="px-3 text-[10px] font-bold uppercase tracking-wider text-[#a0909c] mb-2">Management</p>
                     <div class="space-y-1">
-                        <!-- Dashboard Overview (Active) -->
+                        <!-- Dashboard Overview -->
                         <a href="/admin/dashboard" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium transition bg-[#e2b842]/15 text-[#f1d278] border border-[#e2b842]/30 font-bold shadow-xs">
                             <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                             <span>Dashboard Overview</span>
@@ -106,15 +107,15 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/rooms/floor-1" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 1 (Ground)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 1 (Ground)</span></span>
                                     <span class="text-[9px] bg-[#2a0e21] text-[#f1d278] px-1.5 py-0.2 rounded border border-[#3d1630]">86%</span>
                                 </a>
                                 <a href="/admin/rooms/floor-2" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 2 (Premium)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 2 (Premium)</span></span>
                                     <span class="text-[9px] bg-emerald-950/60 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-800/40">5 Free</span>
                                 </a>
                                 <a href="/admin/rooms/floor-3" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Floor 3 (Penthouse)</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Floor 3 (Penthouse)</span></span>
                                     <span class="text-[9px] bg-teal-950/60 text-teal-300 px-1.5 py-0.2 rounded border border-teal-800/40">7 Free</span>
                                 </a>
                                 <a href="/admin/add-room" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#e2b842] hover:text-[#f1d278] hover:bg-[#1f0a18]">
@@ -134,10 +135,10 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/record-entry" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Record Entry</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Record Entry</span></span>
                                 </a>
                                 <a href="/admin/expenses-ledger" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Expenses Ledger</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Expenses Ledger</span></span>
                                 </a>
                             </div>
                         </div>
@@ -204,10 +205,12 @@
                             </a>
                             <div class="pl-7 pr-2 py-1 space-y-1">
                                 <a href="/admin/view-edit-profile" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-[#faf6f0] hover:bg-[#1f0a18]">
-                                    <span>↳ Edit Profile</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Edit Profile</span></span>
+                                    
                                 </a>
                                 <a href="/admin/logout-confirmation" class="flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#a0909c] hover:text-red-300 hover:bg-[#1f0a18]">
-                                    <span>↳ Logout Confirmation</span>
+                                    <span class="flex items-center gap-1.5"><span class="text-[#e2b842]/70 font-bold">›</span><span>Logout Confirmation</span></span>
+                                    
                                 </a>
                             </div>
                         </div>
@@ -236,70 +239,81 @@
     <div class="lg:pl-64 flex flex-col min-h-screen pb-20 lg:pb-12">
 
         <!-- TOP DESKTOP HEADER BAR -->
-        <header class="h-16 bg-white border-b border-[#ede4d5] px-4 sm:px-6 lg:px-8 flex items-center justify-between sticky top-0 z-30">
+        <header class="min-h-[72px] py-3.5 px-4 sm:px-6 lg:px-8 bg-white border-b border-[#ede4d5] flex items-center justify-between sticky top-0 z-30 shadow-2xs">
             <!-- Mobile Menu Toggle & Title -->
-            <div class="flex items-center gap-3">
-                <a href="/admin/dashboard" class="lg:hidden w-8 h-8 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-sm shadow-xs" title="TAAMARA Admin">
+            <div class="flex items-center gap-3 min-w-0">
+                <a href="/admin/dashboard" class="lg:hidden w-9 h-9 rounded-xl bg-gradient-to-br from-[#e2b842] to-[#c59b27] flex items-center justify-center text-[#14070f] font-serif font-black text-base shadow-sm flex-shrink-0 whitespace-nowrap" title="TAAMARA Admin">
                     T
                 </a>
-                <div>
-                    <h2 class="text-sm lg:text-base font-serif font-bold text-[#1a1016] leading-tight">TAAMARA CO-LIVE SPACES</h2>
-                    <p class="text-[10px] sm:text-[11px] text-[#c59b27] font-semibold tracking-wide">Road No. 1A, Nanakramguda, Hyderabad • Financial District</p>
+                <div class="flex flex-col justify-center min-w-0">
+                    <h2 class="text-base sm:text-lg font-serif font-bold text-[#1a1016] leading-snug truncate tracking-tight">TAAMARA CO-LIVE SPACES</h2>
+                    <p class="text-[11px] text-[#c59b27] font-semibold tracking-wide leading-none truncate">Road No. 1A, Nanakramguda, Hyderabad • Financial District</p>
                 </div>
             </div>
 
             <!-- Search and Action Bar -->
-            <div class="flex items-center gap-2.5 sm:gap-3">
+            <div class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
                 <!-- Search box -->
-                <div class="relative hidden md:block">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#a0909c]">
+                <div class="relative hidden xl:block">
+                    <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#a0909c]">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </div>
                     <input type="text" placeholder="Search resident, room, phone, voucher..."
-                        class="w-56 lg:w-72 pl-9 pr-4 py-2 bg-[#fdfbf7] border border-[#ede4d5] rounded-xl text-xs text-[#1a1016] focus:outline-none focus:ring-2 focus:ring-[#e2b842] focus:border-[#c59b27] transition shadow-2xs">
+                        class="w-56 2xl:w-72 h-10 pl-9 pr-4 bg-[#fdfbf7] border border-[#ede4d5] rounded-xl text-xs text-[#1a1016] placeholder-[#a0909c] focus:outline-none focus:ring-2 focus:ring-[#e2b842] focus:border-[#c59b27] transition shadow-2xs font-medium">
                 </div>
 
                 <!-- Fast Actions -->
                 <a href="/admin/assign-bed"
-                    class="bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] border border-[#3d1630] text-xs font-bold px-3 sm:px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-xs transition">
-                    <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="h-10 px-3.5 bg-gradient-to-r from-[#e2b842] to-[#c59b27] hover:from-[#f1d278] hover:to-[#e2b842] text-[#14070f] text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-sm transition whitespace-nowrap flex-shrink-0">
+                    <svg class="w-4 h-4 text-[#14070f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
                     </svg>
-                    <span class="hidden sm:inline">Assign Bed</span>
+                    <span class="hidden sm:inline">+ Assign Bed</span>
                     <span class="sm:hidden">Check-In</span>
                 </a>
 
                 <a href="/admin/record-entry"
-                    class="hidden sm:flex bg-[#e2b842]/15 hover:bg-[#e2b842]/25 text-[#c59b27] border border-[#e2b842]/30 text-xs font-bold px-3.5 py-2 rounded-xl items-center gap-1.5 transition">
-                    <svg class="w-4 h-4 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="h-10 px-3.5 bg-[#14070f] hover:bg-[#1f0a18] text-[#faf6f0] border border-[#3d1630] text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-xs transition whitespace-nowrap flex-shrink-0">
+                    <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                     </svg>
                     <span>Record Entry</span>
                 </a>
 
+                <a href="/admin/record-entry?type=expense"
+                    class="hidden sm:flex h-10 px-3.5 bg-white hover:bg-[#faf6f0] text-[#1a1016] border border-[#ede4d5] text-xs font-bold rounded-xl items-center gap-1.5 shadow-2xs transition whitespace-nowrap flex-shrink-0">
+                    <svg class="w-4 h-4 text-[#c59b27]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>New Expense</span>
+                </a>
+
                 <a href="/admin/maintenance"
-                    class="hidden md:flex bg-red-50 text-red-700 border border-red-200/80 text-xs font-bold px-3 py-2 rounded-xl items-center gap-1.5 hover:bg-red-100 transition shadow-2xs">
+                    class="hidden lg:flex h-10 px-3 bg-red-50 text-red-700 border border-red-200/80 text-xs font-bold rounded-xl items-center gap-1.5 hover:bg-red-100 transition shadow-2xs whitespace-nowrap flex-shrink-0">
                     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                     <span>5 Work Orders</span>
                 </a>
 
                 <!-- Notifications icon -->
                 <a href="/admin/unread-notifications"
-                    class="relative p-2 text-[#1a1016] hover:bg-[#ede4d5]/50 rounded-xl transition" title="4 Unread Alerts">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="relative h-10 w-10 flex items-center justify-center text-[#1a1016] hover:bg-[#ede4d5]/50 border border-[#ede4d5] rounded-xl transition flex-shrink-0 whitespace-nowrap" title="4 Unread Alerts">
+                    <svg class="w-5 h-5 text-[#1a1016]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                     </svg>
-                    <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
                 </a>
 
                 <!-- Admin Profile Badge -->
                 <a href="/admin/view-edit-profile"
-                    class="hidden lg:flex items-center gap-2 pl-2 pr-3 py-1 bg-[#fdfbf7] border border-[#ede4d5] rounded-xl hover:border-[#c59b27] transition shadow-2xs">
-                    <div class="w-6 h-6 rounded-full bg-[#e2b842]/20 text-[#c59b27] flex items-center justify-center font-bold text-[10px]">AM</div>
-                    <span class="text-xs font-bold text-[#1a1016]">Alex M.</span>
+                    class="hidden md:flex h-10 items-center gap-2 pl-2 pr-3.5 bg-[#fdfbf7] border border-[#ede4d5] rounded-xl hover:border-[#c59b27] transition shadow-2xs whitespace-nowrap flex-shrink-0">
+                    <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[#e2b842]/20 to-[#c59b27]/20 text-[#c59b27] flex items-center justify-center font-bold text-xs border border-[#e2b842]/30">AM</div>
+                    <div class="flex flex-col text-left">
+                        <span class="text-xs font-bold text-[#1a1016] leading-none">Alex Morgan</span>
+                        <span class="text-[9px] text-[#a0909c] leading-none mt-0.5">Super Admin</span>
+                    </div>
                 </a>
             </div>
         </header>
@@ -805,6 +819,7 @@
     <script src="/js/sidebar-scroll.js"></script>
     <script src="/js/dashboard.js"></script>
 
+    <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <!-- MOBILE BOTTOM NAVIGATION BAR -->
     <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-[#faf6f0]/95 backdrop-blur-md border-t border-[#ede4d5] z-40 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-[#6e5d68] shadow-lg">
         <a href="/admin/dashboard" class="flex flex-col items-center gap-1 transition text-[#c59b27] font-bold">
