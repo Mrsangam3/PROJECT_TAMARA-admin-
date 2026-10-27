@@ -38,7 +38,7 @@ const headFontAndThemeBlock = `    <!-- Google Fonts (Official TAAMARA Typograph
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/js/taamara-theme.js"></script>`;
 
-console.log('--- Applying Mobile 3-Bars Top Navigation & Removing Bottom Nav Across All Screens ---');
+console.log('--- Cleaning Up Extra Space & Aligning PC & Mobile Layouts Perfectly ---');
 
 for (const [filename, config] of Object.entries(pagesConfig)) {
     const filePath = path.join('public', filename);
@@ -61,42 +61,70 @@ for (const [filename, config] of Object.entries(pagesConfig)) {
         }
     }
 
-    // 2. Body background update to luxury cream #faf6f0
+    // 2. Body background update to luxury cream #faf6f0 with overflow-x-hidden
     content = content.replace(/<body class="([^"]*)"/i, (match, classes) => {
         let updatedClasses = classes
             .replace(/bg-slate-[0-9]+/g, 'bg-[#faf6f0]')
             .replace(/text-slate-800/g, 'text-[#1a1016]');
         if (!updatedClasses.includes('bg-[#faf6f0]')) updatedClasses += ' bg-[#faf6f0] text-[#1a1016]';
+        if (!updatedClasses.includes('overflow-x-hidden')) updatedClasses += ' overflow-x-hidden';
         return `<body class="${updatedClasses.trim()}"`;
     });
 
-    // 3. Replace <aside id="desktopSidebar" ... </aside> with unified sidebar
-    const asideRegex = /<aside id="desktopSidebar"[\s\S]*?<\/aside>/i;
+    // 3. Replace <aside id="desktopSidebar" ... </aside> with unified sidebar cleanly
+    const asideRegex = /(?:<!-- DESKTOP SIDEBAR -->\s*)*<aside id="desktopSidebar"[\s\S]*?<\/aside>/i;
     if (asideRegex.test(content)) {
         content = content.replace(asideRegex, getUnifiedSidebar(config.activeKey, config.activeSubKey));
     }
 
-    // 4. REMOVE bottom mobile navigation completely
+    // 4. Clean main desktop wrapper classes (remove duplicated classes)
+    content = content.replace(
+        /<div class="lg:pl-64 flex flex-col min-h-screen[^"]*"/i,
+        '<div class="lg:pl-64 flex flex-col min-h-screen pb-12 overflow-x-hidden max-w-full"'
+    );
+
+    // 5. Fix double plus on assign bed button in dashboard.html
+    if (filename === 'dashboard.html') {
+        content = content.replace('<span class="hidden sm:inline">+ Assign Bed</span>', '<span class="hidden sm:inline">Assign Bed</span>');
+        // Make action buttons responsive so they hide on mobile without crushing header
+        content = content.replace(
+            /(<a href="\/admin\/assign-bed"\s+class=")(?:hidden sm:flex )?(h-10 px-3.5 bg-gradient-to-r)/g,
+            '$1hidden sm:flex $2'
+        );
+        content = content.replace(
+            /(<a href="\/admin\/record-entry"\s+class=")(?:hidden md:flex )?(h-10 px-3.5 bg-\[#14070f\])/g,
+            '$1hidden md:flex $2'
+        );
+    } else {
+        content = content.replace(
+            /<div class="flex items-center gap-(?:2\.5|3)">(\s*<a href="\/admin\/(?:assign-bed|collect-due|record-entry|add-room|new-expense))/g,
+            '<div class="hidden sm:flex items-center gap-3">$1'
+        );
+    }
+
+    // 6. Cleanly replace EVERYTHING between </header> and <main so NO orphaned footers or broken div tags exist!
+    const mobileTopBarAndPopup = getMobileTopBarAndPopup(config.activeKey, config.activeSubKey);
+    const headerToMainRegex = /<\/header>[\s\S]*?<main\b/i;
+    if (headerToMainRegex.test(content)) {
+        content = content.replace(
+            headerToMainRegex,
+            `</header>\n\n    ${mobileTopBarAndPopup}\n\n        <main`
+        );
+    }
+
+    // 7. REMOVE any bottom mobile navigation completely
     content = content.replace(/<!-- MOBILE BOTTOM NAVIGATION BAR[\s\S]*?<\/nav>\s*/gi, '');
     content = content.replace(/<nav class="lg:hidden fixed bottom-0[\s\S]*?<\/nav>\s*/gi, '');
 
-    // 5. Remove any previously added mobile top navigation bar or popup modal to avoid duplicates
-    content = content.replace(/<!-- MOBILE TOP NAVIGATION BAR \(Small 3 Bars[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*/gi, '');
-
-    // 6. Fix padding bottom on main container now that bottom nav is removed
-    content = content.replace(/pb-20\s+lg:pb-12/g, 'pb-12');
-    content = content.replace(/\bpb-20\b/g, 'pb-12');
-
-    // 7. Inject Mobile Top Bar & Popup Navigation right after </header>
-    const mobileTopBarAndPopup = getMobileTopBarAndPopup(config.activeKey, config.activeSubKey);
-    if (content.includes('</header>')) {
-        content = content.replace('</header>', `</header>\n\n    ${mobileTopBarAndPopup}\n`);
-    }
-
     // 8. Add mobile-nav-popup-trigger class to header mobile icon/button if present
     content = content.replace(
-        /(<a href="\/admin\/dashboard" class="lg:hidden w-9 h-9 rounded-xl [^"]*)"/i,
-        `$1 mobile-nav-popup-trigger"`
+        /(<a href="(?:\/|\/admin\/dashboard)" class="lg:hidden [^"]*)"/gi,
+        (match, prefix) => {
+            if (!prefix.includes('mobile-nav-popup-trigger')) {
+                return `${prefix} mobile-nav-popup-trigger"`;
+            }
+            return match;
+        }
     );
 
     // 9. Ensure sidebar-scroll.js is included before </body>
@@ -108,4 +136,4 @@ for (const [filename, config] of Object.entries(pagesConfig)) {
     console.log(`Updated ${filename} successfully!`);
 }
 
-console.log('--- ALL 23 PAGES SUCCESSFULLY UPGRADED WITH MOBILE TOP 3-BARS POPUP ---');
+console.log('--- ALL 23 PAGES CLEANED & ALIGNED ---');

@@ -206,24 +206,42 @@ function getMobileTopBarAndPopup(activeKey, activeSubKey = null) {
     const isNotifications = activeKey === 'notifications';
     const isMaintenance = activeKey === 'maintenance';
 
-    return `<!-- MOBILE TOP NAVIGATION BAR (Small 3 Bars on Top Under Dashboard) -->
-    <div class="lg:hidden sticky top-[72px] z-25 bg-[#faf6f0]/95 backdrop-blur-md border-b border-[#ede4d5] px-4 py-2 flex items-center justify-between shadow-2xs">
-        <button type="button" class="mobile-nav-popup-trigger px-3 py-1.5 rounded-xl bg-[#14070f] text-[#f1d278] border border-[#e2b842]/50 shadow-xs flex items-center gap-2 active:scale-95 transition hover:bg-[#1f0a18]" aria-label="Open Dashboard Navigation">
-            <!-- Small three bars icon -->
-            <svg class="w-4 h-4 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    const pageLabels = {
+        'dashboard': 'Dashboard Overview',
+        'tenants': 'Residents Directory',
+        'rooms': 'Rooms & Sharing',
+        'finance': 'Finance & Ledger',
+        'notifications': 'Alerts',
+        'more': 'Profile & Settings',
+        'maintenance': 'Work Orders',
+        'assign-bed': 'Assign Bed',
+        'new-checkins': 'New Check-Ins',
+        'pending-dues': 'Pending Dues',
+        'paid-tenants': 'Settled Receipts'
+    };
+    const currentLabel = pageLabels[activeKey] || 'Dashboard';
+
+    return `<!-- MOBILE TOP NAVIGATION BAR (Adaptive, Zero Overflow, Fits Any Mobile Resolution) -->
+    <div class="lg:hidden sticky top-[72px] z-25 bg-[#faf6f0]/95 backdrop-blur-md border-b border-[#ede4d5] px-3 sm:px-6 py-2 flex items-center justify-between shadow-2xs w-full max-w-full overflow-hidden">
+        <!-- 3 Bars Navigation Button -->
+        <button type="button" class="mobile-nav-popup-trigger flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#14070f] text-[#faf6f0] border border-[#e2b842]/40 shadow-xs active:scale-95 transition hover:bg-[#1f0a18] flex-shrink-0" aria-label="Open Dashboard Navigation">
+            <!-- Small 3 bars icon -->
+            <svg class="w-4 h-4 text-[#e2b842] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <span class="text-xs font-bold text-[#faf6f0]">Navigation</span>
-            <svg class="w-3.5 h-3.5 text-[#e2b842]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="text-xs font-bold text-[#faf6f0] whitespace-nowrap">Navigation</span>
+            <svg class="w-3.5 h-3.5 text-[#e2b842] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
         </button>
 
-        <div class="flex items-center gap-2">
-            <a href="/admin/dashboard" class="text-xs font-bold px-2.5 py-1 rounded-lg ${isDashboard ? 'bg-[#e2b842] text-[#14070f] shadow-2xs' : 'bg-white text-[#1a1016] border border-[#ede4d5]'} transition">
-                Dashboard
-            </a>
-            <a href="/admin/assign-bed" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-[#14070f] text-[#f1d278] border border-[#e2b842]/30 shadow-2xs flex items-center gap-1 transition">
-                + Check-In
-            </a>
+        <!-- Right Side: Compact, Non-Overflowing Indicator (Adapts to screen resolution) -->
+        <div class="flex items-center gap-2 min-w-0 flex-shrink-0">
+            <span class="hidden sm:inline-block text-[11px] font-bold uppercase tracking-wider text-[#a0909c] truncate max-w-[120px]">${currentLabel}</span>
+            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#14070f] border border-[#3d1630] text-[10px] font-bold text-[#e2b842] flex-shrink-0 whitespace-nowrap">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Live PMS</span>
+            </span>
         </div>
     </div>
 
