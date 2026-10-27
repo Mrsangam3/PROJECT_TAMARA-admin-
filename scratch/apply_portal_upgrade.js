@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { getUnifiedSidebar, getUnifiedMobileBottomNav } = require('./nav_template');
+const { getUnifiedSidebar, getMobileTopBarAndPopup } = require('./nav_template');
 
 const pagesConfig = {
     'dashboard.html': { activeKey: 'dashboard', activeSubKey: null },
@@ -38,7 +38,7 @@ const headFontAndThemeBlock = `    <!-- Google Fonts (Official TAAMARA Typograph
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/js/taamara-theme.js"></script>`;
 
-console.log('--- Applying Professional TAAMARA Brand Styling & Navigation ---');
+console.log('--- Applying Mobile 3-Bars Top Navigation & Removing Bottom Nav Across All Screens ---');
 
 for (const [filename, config] of Object.entries(pagesConfig)) {
     const filePath = path.join('public', filename);
@@ -51,7 +51,6 @@ for (const [filename, config] of Object.entries(pagesConfig)) {
 
     // 1. Ensure <head> contains Google Fonts and taamara-theme.css / taamara-theme.js
     if (!content.includes('taamara-theme.css')) {
-        // Replace existing fonts link and tailwindcdn with headFontAndThemeBlock
         if (content.includes('https://fonts.googleapis.com/css2')) {
             content = content.replace(/<link[^>]+googleapis\.com\/css2[^>]+>/i, '');
         }
@@ -77,19 +76,30 @@ for (const [filename, config] of Object.entries(pagesConfig)) {
         content = content.replace(asideRegex, getUnifiedSidebar(config.activeKey, config.activeSubKey));
     }
 
-    // 4. Update / add mobile bottom navigation
-    const bottomNavRegex = /<nav class="lg:hidden fixed bottom-0[\s\S]*?<\/nav>/i;
-    const newBottomNav = getUnifiedMobileBottomNav(config.activeKey);
-    if (bottomNavRegex.test(content)) {
-        content = content.replace(bottomNavRegex, newBottomNav);
-    } else {
-        // Insert bottom nav before the closing </body> or closing wrapper
-        if (content.includes('</body>')) {
-            content = content.replace('</body>', `${newBottomNav}\n</body>`);
-        }
+    // 4. REMOVE bottom mobile navigation completely
+    content = content.replace(/<!-- MOBILE BOTTOM NAVIGATION BAR[\s\S]*?<\/nav>\s*/gi, '');
+    content = content.replace(/<nav class="lg:hidden fixed bottom-0[\s\S]*?<\/nav>\s*/gi, '');
+
+    // 5. Remove any previously added mobile top navigation bar or popup modal to avoid duplicates
+    content = content.replace(/<!-- MOBILE TOP NAVIGATION BAR \(Small 3 Bars[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*/gi, '');
+
+    // 6. Fix padding bottom on main container now that bottom nav is removed
+    content = content.replace(/pb-20\s+lg:pb-12/g, 'pb-12');
+    content = content.replace(/\bpb-20\b/g, 'pb-12');
+
+    // 7. Inject Mobile Top Bar & Popup Navigation right after </header>
+    const mobileTopBarAndPopup = getMobileTopBarAndPopup(config.activeKey, config.activeSubKey);
+    if (content.includes('</header>')) {
+        content = content.replace('</header>', `</header>\n\n    ${mobileTopBarAndPopup}\n`);
     }
 
-    // 5. Ensure sidebar-scroll.js is included before </body>
+    // 8. Add mobile-nav-popup-trigger class to header mobile icon/button if present
+    content = content.replace(
+        /(<a href="\/admin\/dashboard" class="lg:hidden w-9 h-9 rounded-xl [^"]*)"/i,
+        `$1 mobile-nav-popup-trigger"`
+    );
+
+    // 9. Ensure sidebar-scroll.js is included before </body>
     if (!content.includes('sidebar-scroll.js')) {
         content = content.replace('</body>', `    <script src="/js/sidebar-scroll.js"></script>\n</body>`);
     }
@@ -98,4 +108,4 @@ for (const [filename, config] of Object.entries(pagesConfig)) {
     console.log(`Updated ${filename} successfully!`);
 }
 
-console.log('--- ALL PAGES HARMONIZED ---');
+console.log('--- ALL 23 PAGES SUCCESSFULLY UPGRADED WITH MOBILE TOP 3-BARS POPUP ---');
